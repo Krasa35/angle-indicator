@@ -15,4 +15,4 @@ Project orginally intended to be regulation system for inverted pendulum but aft
 
   - First STM32 project f7
 
-    ![alt](99_Docs\98_Photos\Graph_001.png)
+    ![alt](out\99_Docs\10_UML\test\test.png)
