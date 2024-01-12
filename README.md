@@ -6,6 +6,7 @@ Project of regulation system for angle indicator based on STM32. Software is dev
 
 Project orginally intended to be regulation system for inverted pendulum but after considerations and thoughts it was decided to create angle indicator object, so name was kept because of first willingnesses.
 
+
 # Changelog
 
 - 2024-01-07 -- 0.0.0
