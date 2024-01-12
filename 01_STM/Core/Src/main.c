@@ -31,6 +31,7 @@
 /* USER CODE BEGIN Includes */
 #include "AS5600.h"
 #include <stdio.h>
+#include "interrupts.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -51,7 +52,7 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-
+struct AS5600 device;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -62,7 +63,14 @@ void SystemClock_Config(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-
+//void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
+//      float zmienna = AS5600_Angle(&device);
+//      char buffer[20];  // Adjust the size as needed
+//      int len = snprintf(buffer, sizeof(buffer), "%f", zmienna);
+//      buffer[len++] = '\r';
+//      buffer[len++] = '\n';
+//      HAL_UART_Transmit(&huart3, (uint8_t *)buffer, len, HAL_MAX_DELAY);
+//}
 /* USER CODE END 0 */
 
 /**
@@ -71,6 +79,7 @@ void SystemClock_Config(void);
   */
 int main(void)
 {
+
   /* USER CODE BEGIN 1 */
 
   /* USER CODE END 1 */
@@ -103,8 +112,8 @@ int main(void)
   MX_FATFS_Init();
   /* USER CODE BEGIN 2 */
   HAL_UART_Init(&huart3);
-  struct AS5600 device;
   AS5600_Init(&device);
+  HAL_TIM_Base_Start_IT(&htim3);
   /* USER CODE END 2 */
 
   /* Infinite loop */
