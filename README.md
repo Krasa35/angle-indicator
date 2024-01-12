@@ -6,3 +6,5 @@ Project orginally intended to be regulation system for inverted pendulum but aft
 #   Changelog
 *   2024-01-07 -- 0.0.0
     *   Startup of git repo and files for first report - intended project inside **99_Docs**
+#   TODO
+*   
