@@ -27,24 +27,24 @@
 //config
 
 struct AS5600 {
-	uint8_t ADDRESS;
-	uint8_t	ZMCO;
-	uint8_t	ZPOS1;
-	uint8_t	ZPOS2;
-	uint8_t	MPOS1;
-	uint8_t	MPOS2;
-	uint8_t	MANG1;
-	uint8_t	MANG2;
-	uint8_t	CONF1;
-	uint8_t	CONF2;
-	uint8_t	RAW_ANGLE1;
-	uint8_t	RAW_ANGLE2;
-	uint8_t	ANGLE1;
-	uint8_t	ANGLE2;
-	uint8_t	STATUS;
-	uint8_t	AGC;
-	uint8_t	MAGNITUDE1;
-	uint8_t	MAGNITUDE2;
+    uint8_t ADDRESS;
+    uint8_t    ZMCO;
+    uint8_t    ZPOS1;
+    uint8_t    ZPOS2;
+    uint8_t    MPOS1;
+    uint8_t    MPOS2;
+    uint8_t    MANG1;
+    uint8_t    MANG2;
+    uint8_t    CONF1;
+    uint8_t    CONF2;
+    uint8_t    RAW_ANGLE1;
+    uint8_t    RAW_ANGLE2;
+    uint8_t    ANGLE1;
+    uint8_t    ANGLE2;
+    uint8_t    STATUS;
+    uint8_t    AGC;
+    uint8_t    MAGNITUDE1;
+    uint8_t    MAGNITUDE2;
 };
 
 void AS5600_Init(struct AS5600* device);
