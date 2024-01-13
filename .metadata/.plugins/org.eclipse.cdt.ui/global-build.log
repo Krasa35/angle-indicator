@@ -84,3 +84,894 @@ arm-none-eabi-size   01_STM.elf
   55092	    816	   4024	  59932	   ea1c	01_STM.elf
 Finished building: default.size.stdout
  
+18:07:20 **** Incremental Build of configuration Debug for project 01_STM ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/gpio.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Kurus/Documents/github z krasa/inverted-pendulum/01_STM/Components/Inc" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core_A/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/gpio.d" -MT"Core/Src/gpio.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/gpio.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Kurus/Documents/github z krasa/inverted-pendulum/01_STM/Components/Inc" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core_A/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f7xx_it.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Kurus/Documents/github z krasa/inverted-pendulum/01_STM/Components/Inc" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core_A/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f7xx_it.d" -MT"Core/Src/stm32f7xx_it.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f7xx_it.o"
+arm-none-eabi-gcc "../Core/Src/tim.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Kurus/Documents/github z krasa/inverted-pendulum/01_STM/Components/Inc" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core_A/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/tim.d" -MT"Core/Src/tim.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/tim.o"
+arm-none-eabi-gcc "../Components/Src/interrupts.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Kurus/Documents/github z krasa/inverted-pendulum/01_STM/Components/Inc" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core_A/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Components/Src/interrupts.d" -MT"Components/Src/interrupts.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Components/Src/interrupts.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:121:7: error: 'encode' undeclared (first use in this function)
+  121 |       encode = __HAL_TIM_GET_COUNTER(&htim3);
+      |       ^~~~~~
+../Core/Src/main.c:121:7: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:122:21: error: 'prev_value' undeclared (first use in this function)
+  122 |       if (encode != prev_value) {
+      |                     ^~~~~~~~~~
+make: *** [Core/Src/subdir.mk:55: Core/Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+18:08:44 **** Incremental Build of configuration Debug for project 01_STM ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Kurus/Documents/github z krasa/inverted-pendulum/01_STM/Components/Inc" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core_A/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "01_STM.elf" @"objects.list"  -larm_cortexM7lfsp_math -mcpu=cortex-m7 -T"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="01_STM.map" -Wl,--gc-sections -static -L"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\Lib\CMSIS_ARM" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 01_STM.elf
+ 
+arm-none-eabi-size   01_STM.elf 
+arm-none-eabi-objdump -h -S  01_STM.elf  > "01_STM.list"
+   text	   data	    bss	    dec	    hex	filename
+  55424	    816	   4096	  60336	   ebb0	01_STM.elf
+Finished building: default.size.stdout
+ 
+Finished building: 01_STM.list
+ 
+18:09:58 **** Incremental Build of configuration Debug for project 01_STM ****
+make -j4 all 
+arm-none-eabi-size   01_STM.elf 
+   text	   data	    bss	    dec	    hex	filename
+  55424	    816	   4096	  60336	   ebb0	01_STM.elf
+Finished building: default.size.stdout
+ 
+18:11:32 **** Incremental Build of configuration Debug for project 01_STM ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Kurus/Documents/github z krasa/inverted-pendulum/01_STM/Components/Inc" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core_A/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "01_STM.elf" @"objects.list"  -larm_cortexM7lfsp_math -mcpu=cortex-m7 -T"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="01_STM.map" -Wl,--gc-sections -static -L"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\Lib\CMSIS_ARM" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 01_STM.elf
+ 
+arm-none-eabi-size   01_STM.elf 
+arm-none-eabi-objdump -h -S  01_STM.elf  > "01_STM.list"
+   text	   data	    bss	    dec	    hex	filename
+  55176	    816	   4096	  60088	   eab8	01_STM.elf
+Finished building: default.size.stdout
+ 
+Finished building: 01_STM.list
+ 
+18:13:51 **** Incremental Build of configuration Debug for project 01_STM ****
+make -j4 all 
+arm-none-eabi-size   01_STM.elf 
+   text	   data	    bss	    dec	    hex	filename
+  55176	    816	   4096	  60088	   eab8	01_STM.elf
+Finished building: default.size.stdout
+ 
+18:18:30 **** Incremental Build of configuration Debug for project 01_STM ****
+make -j4 all 
+arm-none-eabi-size   01_STM.elf 
+   text	   data	    bss	    dec	    hex	filename
+  55176	    816	   4096	  60088	   eab8	01_STM.elf
+Finished building: default.size.stdout
+ 
+18:20:40 **** Incremental Build of configuration Debug for project 01_STM ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Kurus/Documents/github z krasa/inverted-pendulum/01_STM/Components/Inc" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core_A/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:121:34: warning: implicit declaration of function 'HAL_TIM_ReadEncoder' [-Wimplicit-function-declaration]
+  121 |           int16_t encoderValue = HAL_TIM_ReadEncoder(&htimX);
+      |                                  ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:121:55: error: 'htimX' undeclared (first use in this function); did you mean 'htim9'?
+  121 |           int16_t encoderValue = HAL_TIM_ReadEncoder(&htimX);
+      |                                                       ^~~~~
+      |                                                       htim9
+../Core/Src/main.c:121:55: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:121:19: warning: unused variable 'encoderValue' [-Wunused-variable]
+  121 |           int16_t encoderValue = HAL_TIM_ReadEncoder(&htimX);
+      |                   ^~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:55: Core/Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+18:20:52 **** Incremental Build of configuration Debug for project 01_STM ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Kurus/Documents/github z krasa/inverted-pendulum/01_STM/Components/Inc" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core_A/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:121:34: warning: implicit declaration of function 'HAL_TIM_ReadEncoder' [-Wimplicit-function-declaration]
+  121 |           int16_t encoderValue = HAL_TIM_ReadEncoder(&htim1);
+      |                                  ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:121:19: warning: unused variable 'encoderValue' [-Wunused-variable]
+  121 |           int16_t encoderValue = HAL_TIM_ReadEncoder(&htim1);
+      |                   ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "01_STM.elf" @"objects.list"  -larm_cortexM7lfsp_math -mcpu=cortex-m7 -T"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="01_STM.map" -Wl,--gc-sections -static -L"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\Lib\CMSIS_ARM" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.13.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/main.o: in function `main':
+C:/Users/Kurus/Documents/github z krasa/inverted-pendulum/01_STM/Debug/../Core/Src/main.c:121: undefined reference to `HAL_TIM_ReadEncoder'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:69: 01_STM.elf] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+18:22:29 **** Incremental Build of configuration Debug for project 01_STM ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Kurus/Documents/github z krasa/inverted-pendulum/01_STM/Components/Inc" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core_A/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:121:21: warning: unused variable 'encoderValue' [-Wunused-variable]
+  121 |             int16_t encoderValue = __HAL_TIM_GET_COUNTER(&htim1);
+      |                     ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "01_STM.elf" @"objects.list"  -larm_cortexM7lfsp_math -mcpu=cortex-m7 -T"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="01_STM.map" -Wl,--gc-sections -static -L"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\Lib\CMSIS_ARM" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 01_STM.elf
+ 
+arm-none-eabi-size   01_STM.elf 
+arm-none-eabi-objdump -h -S  01_STM.elf  > "01_STM.list"
+   text	   data	    bss	    dec	    hex	filename
+  55160	    816	   4096	  60072	   eaa8	01_STM.elf
+Finished building: default.size.stdout
+ 
+Finished building: 01_STM.list
+ 
+18:30:03 **** Incremental Build of configuration Debug for project 01_STM ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Kurus/Documents/github z krasa/inverted-pendulum/01_STM/Components/Inc" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core_A/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f7xx_it.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Kurus/Documents/github z krasa/inverted-pendulum/01_STM/Components/Inc" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core_A/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f7xx_it.d" -MT"Core/Src/stm32f7xx_it.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f7xx_it.o"
+arm-none-eabi-gcc "../Core/Src/tim.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Kurus/Documents/github z krasa/inverted-pendulum/01_STM/Components/Inc" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core_A/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/tim.d" -MT"Core/Src/tim.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/tim.o"
+../Core/Src/main.c: In function 'HAL_TIM_IC_CaptureCallback':
+../Core/Src/main.c:79:9: error: 'counter' undeclared (first use in this function)
+   79 |         counter = __HAL_TIM_GET_COUNTER(htim);
+      |         ^~~~~~~
+../Core/Src/main.c:79:9: note: each undeclared identifier is reported only once for each function it appears in
+At top level:
+../Core/Src/main.c:77:6: warning: 'HAL_TIM_IC_CaptureCallback' defined but not used [-Wunused-function]
+   77 | void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:55: Core/Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+18:30:43 **** Incremental Build of configuration Debug for project 01_STM ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Kurus/Documents/github z krasa/inverted-pendulum/01_STM/Components/Inc" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core_A/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:77:18: warning: variable 'counter' set but not used [-Wunused-but-set-variable]
+   77 |         uint32_t counter = 0;
+      |                  ^~~~~~~
+At top level:
+../Core/Src/main.c:78:6: warning: 'HAL_TIM_IC_CaptureCallback' defined but not used [-Wunused-function]
+   78 | void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "01_STM.elf" @"objects.list"  -larm_cortexM7lfsp_math -mcpu=cortex-m7 -T"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="01_STM.map" -Wl,--gc-sections -static -L"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\Lib\CMSIS_ARM" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 01_STM.elf
+ 
+arm-none-eabi-size   01_STM.elf 
+arm-none-eabi-objdump -h -S  01_STM.elf  > "01_STM.list"
+   text	   data	    bss	    dec	    hex	filename
+  55256	    816	   4096	  60168	   eb08	01_STM.elf
+Finished building: default.size.stdout
+ 
+Finished building: 01_STM.list
+ 
+18:34:05 **** Incremental Build of configuration Debug for project 01_STM ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Kurus/Documents/github z krasa/inverted-pendulum/01_STM/Components/Inc" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core_A/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "01_STM.elf" @"objects.list"  -larm_cortexM7lfsp_math -mcpu=cortex-m7 -T"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="01_STM.map" -Wl,--gc-sections -static -L"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\Lib\CMSIS_ARM" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 01_STM.elf
+ 
+arm-none-eabi-size   01_STM.elf 
+arm-none-eabi-objdump -h -S  01_STM.elf  > "01_STM.list"
+   text	   data	    bss	    dec	    hex	filename
+  55256	    816	   4104	  60176	   eb10	01_STM.elf
+Finished building: default.size.stdout
+ 
+Finished building: 01_STM.list
+ 
+18:40:42 **** Incremental Build of configuration Debug for project 01_STM ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Kurus/Documents/github z krasa/inverted-pendulum/01_STM/Components/Inc" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core_A/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f7xx_it.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Kurus/Documents/github z krasa/inverted-pendulum/01_STM/Components/Inc" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core_A/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f7xx_it.d" -MT"Core/Src/stm32f7xx_it.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f7xx_it.o"
+arm-none-eabi-gcc "../Core/Src/tim.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Kurus/Documents/github z krasa/inverted-pendulum/01_STM/Components/Inc" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core_A/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/tim.d" -MT"Core/Src/tim.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/tim.o"
+arm-none-eabi-gcc -o "01_STM.elf" @"objects.list"  -larm_cortexM7lfsp_math -mcpu=cortex-m7 -T"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="01_STM.map" -Wl,--gc-sections -static -L"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\Lib\CMSIS_ARM" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 01_STM.elf
+ 
+arm-none-eabi-size   01_STM.elf 
+arm-none-eabi-objdump -h -S  01_STM.elf  > "01_STM.list"
+   text	   data	    bss	    dec	    hex	filename
+  55328	    816	   4104	  60248	   eb58	01_STM.elf
+Finished building: default.size.stdout
+ 
+Finished building: 01_STM.list
+ 
+21:51:00 **** Incremental Build of configuration Debug for project 01_STM ****
+make -j4 all 
+arm-none-eabi-size   01_STM.elf 
+   text	   data	    bss	    dec	    hex	filename
+  55328	    816	   4104	  60248	   eb58	01_STM.elf
+Finished building: default.size.stdout
+ 
+21:59:32 **** Incremental Build of configuration Debug for project 01_STM ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Kurus/Documents/github z krasa/inverted-pendulum/01_STM/Components/Inc" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core_A/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "01_STM.elf" @"objects.list"  -larm_cortexM7lfsp_math -mcpu=cortex-m7 -T"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="01_STM.map" -Wl,--gc-sections -static -L"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\Lib\CMSIS_ARM" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 01_STM.elf
+ 
+arm-none-eabi-size   01_STM.elf 
+arm-none-eabi-objdump -h -S  01_STM.elf  > "01_STM.list"
+   text	   data	    bss	    dec	    hex	filename
+  55328	    816	   4104	  60248	   eb58	01_STM.elf
+Finished building: default.size.stdout
+ 
+Finished building: 01_STM.list
+ 
+22:01:14 **** Incremental Build of configuration Debug for project 01_STM ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Kurus/Documents/github z krasa/inverted-pendulum/01_STM/Components/Inc" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core_A/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "01_STM.elf" @"objects.list"  -larm_cortexM7lfsp_math -mcpu=cortex-m7 -T"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="01_STM.map" -Wl,--gc-sections -static -L"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\Lib\CMSIS_ARM" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 01_STM.elf
+ 
+arm-none-eabi-size   01_STM.elf 
+arm-none-eabi-objdump -h -S  01_STM.elf  > "01_STM.list"
+   text	   data	    bss	    dec	    hex	filename
+  55328	    816	   4104	  60248	   eb58	01_STM.elf
+Finished building: default.size.stdout
+ 
+Finished building: 01_STM.list
+ 
+22:02:16 **** Incremental Build of configuration Debug for project 01_STM ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Kurus/Documents/github z krasa/inverted-pendulum/01_STM/Components/Inc" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core_A/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "01_STM.elf" @"objects.list"  -larm_cortexM7lfsp_math -mcpu=cortex-m7 -T"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="01_STM.map" -Wl,--gc-sections -static -L"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\Lib\CMSIS_ARM" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 01_STM.elf
+ 
+arm-none-eabi-size   01_STM.elf 
+arm-none-eabi-objdump -h -S  01_STM.elf  > "01_STM.list"
+   text	   data	    bss	    dec	    hex	filename
+  55328	    820	   4100	  60248	   eb58	01_STM.elf
+Finished building: default.size.stdout
+ 
+Finished building: 01_STM.list
+ 
+22:03:34 **** Incremental Build of configuration Debug for project 01_STM ****
+make -j4 all 
+arm-none-eabi-size   01_STM.elf 
+   text	   data	    bss	    dec	    hex	filename
+  55328	    820	   4100	  60248	   eb58	01_STM.elf
+Finished building: default.size.stdout
+ 
+22:15:05 **** Incremental Build of configuration Debug for project 01_STM ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Kurus/Documents/github z krasa/inverted-pendulum/01_STM/Components/Inc" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core_A/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_TIM_IC_CaptureCallback':
+../Core/Src/main.c:86:13: warning: unused variable 'counterDifference' [-Wunused-variable]
+   86 |     int16_t counterDifference = currentCounter - previousCounter;
+      |             ^~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "01_STM.elf" @"objects.list"  -larm_cortexM7lfsp_math -mcpu=cortex-m7 -T"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="01_STM.map" -Wl,--gc-sections -static -L"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\Lib\CMSIS_ARM" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 01_STM.elf
+ 
+arm-none-eabi-size   01_STM.elf 
+arm-none-eabi-objdump -h -S  01_STM.elf  > "01_STM.list"
+   text	   data	    bss	    dec	    hex	filename
+  55416	    816	   4096	  60328	   eba8	01_STM.elf
+Finished building: default.size.stdout
+ 
+Finished building: 01_STM.list
+ 
+22:17:07 **** Incremental Build of configuration Debug for project 01_STM ****
+make -j4 all 
+arm-none-eabi-size   01_STM.elf 
+   text	   data	    bss	    dec	    hex	filename
+  55416	    816	   4096	  60328	   eba8	01_STM.elf
+Finished building: default.size.stdout
+ 
+22:20:41 **** Incremental Build of configuration Debug for project 01_STM ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Kurus/Documents/github z krasa/inverted-pendulum/01_STM/Components/Inc" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core_A/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_TIM_IC_CaptureCallback':
+../Core/Src/main.c:87:13: warning: unused variable 'counterDifference' [-Wunused-variable]
+   87 |     int16_t counterDifference = currentCounter - previousCounter;
+      |             ^~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "01_STM.elf" @"objects.list"  -larm_cortexM7lfsp_math -mcpu=cortex-m7 -T"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="01_STM.map" -Wl,--gc-sections -static -L"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\Lib\CMSIS_ARM" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 01_STM.elf
+ 
+arm-none-eabi-size   01_STM.elf 
+arm-none-eabi-objdump -h -S  01_STM.elf  > "01_STM.list"
+   text	   data	    bss	    dec	    hex	filename
+  55416	    816	   4096	  60328	   eba8	01_STM.elf
+Finished building: default.size.stdout
+ 
+Finished building: 01_STM.list
+ 
+22:21:19 **** Incremental Build of configuration Debug for project 01_STM ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Kurus/Documents/github z krasa/inverted-pendulum/01_STM/Components/Inc" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core_A/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_TIM_IC_CaptureCallback':
+../Core/Src/main.c:87:13: warning: unused variable 'counterDifference' [-Wunused-variable]
+   87 |     int16_t counterDifference = currentCounter - previousCounter;
+      |             ^~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "01_STM.elf" @"objects.list"  -larm_cortexM7lfsp_math -mcpu=cortex-m7 -T"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="01_STM.map" -Wl,--gc-sections -static -L"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\Lib\CMSIS_ARM" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 01_STM.elf
+ 
+arm-none-eabi-size   01_STM.elf 
+arm-none-eabi-objdump -h -S  01_STM.elf  > "01_STM.list"
+   text	   data	    bss	    dec	    hex	filename
+  55464	    816	   4104	  60384	   ebe0	01_STM.elf
+Finished building: default.size.stdout
+ 
+Finished building: 01_STM.list
+ 
+22:22:00 **** Incremental Build of configuration Debug for project 01_STM ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Kurus/Documents/github z krasa/inverted-pendulum/01_STM/Components/Inc" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core_A/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "01_STM.elf" @"objects.list"  -larm_cortexM7lfsp_math -mcpu=cortex-m7 -T"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="01_STM.map" -Wl,--gc-sections -static -L"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\Lib\CMSIS_ARM" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 01_STM.elf
+ 
+arm-none-eabi-size   01_STM.elf 
+arm-none-eabi-objdump -h -S  01_STM.elf  > "01_STM.list"
+   text	   data	    bss	    dec	    hex	filename
+  55472	    816	   4104	  60392	   ebe8	01_STM.elf
+Finished building: default.size.stdout
+ 
+Finished building: 01_STM.list
+ 
+22:27:28 **** Incremental Build of configuration Debug for project 01_STM ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Kurus/Documents/github z krasa/inverted-pendulum/01_STM/Components/Inc" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core_A/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "01_STM.elf" @"objects.list"  -larm_cortexM7lfsp_math -mcpu=cortex-m7 -T"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="01_STM.map" -Wl,--gc-sections -static -L"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\Lib\CMSIS_ARM" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 01_STM.elf
+ 
+arm-none-eabi-size   01_STM.elf 
+arm-none-eabi-objdump -h -S  01_STM.elf  > "01_STM.list"
+   text	   data	    bss	    dec	    hex	filename
+  55328	    816	   4096	  60240	   eb50	01_STM.elf
+Finished building: default.size.stdout
+ 
+Finished building: 01_STM.list
+ 
+22:28:39 **** Incremental Build of configuration Debug for project 01_STM ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Kurus/Documents/github z krasa/inverted-pendulum/01_STM/Components/Inc" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core_A/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "01_STM.elf" @"objects.list"  -larm_cortexM7lfsp_math -mcpu=cortex-m7 -T"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="01_STM.map" -Wl,--gc-sections -static -L"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\Lib\CMSIS_ARM" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 01_STM.elf
+ 
+arm-none-eabi-size   01_STM.elf 
+arm-none-eabi-objdump -h -S  01_STM.elf  > "01_STM.list"
+   text	   data	    bss	    dec	    hex	filename
+  55328	    820	   4100	  60248	   eb58	01_STM.elf
+Finished building: default.size.stdout
+ 
+Finished building: 01_STM.list
+ 
+22:30:32 **** Incremental Build of configuration Debug for project 01_STM ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Kurus/Documents/github z krasa/inverted-pendulum/01_STM/Components/Inc" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core_A/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "01_STM.elf" @"objects.list"  -larm_cortexM7lfsp_math -mcpu=cortex-m7 -T"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="01_STM.map" -Wl,--gc-sections -static -L"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\Lib\CMSIS_ARM" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 01_STM.elf
+ 
+arm-none-eabi-size   01_STM.elf 
+arm-none-eabi-objdump -h -S  01_STM.elf  > "01_STM.list"
+   text	   data	    bss	    dec	    hex	filename
+  55328	    816	   4096	  60240	   eb50	01_STM.elf
+Finished building: default.size.stdout
+ 
+Finished building: 01_STM.list
+ 
+22:38:21 **** Incremental Build of configuration Debug for project 01_STM ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Kurus/Documents/github z krasa/inverted-pendulum/01_STM/Components/Inc" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core_A/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Components/Src/interrupts.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Kurus/Documents/github z krasa/inverted-pendulum/01_STM/Components/Inc" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core_A/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Components/Src/interrupts.d" -MT"Components/Src/interrupts.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Components/Src/interrupts.o"
+../Components/Src/interrupts.c:13:8: error: unknown type name 'float16_t'
+   13 | extern float16_t set_angle;
+      |        ^~~~~~~~~
+make: *** [Components/Src/subdir.mk:22: Components/Src/interrupts.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+22:39:03 **** Incremental Build of configuration Debug for project 01_STM ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Kurus/Documents/github z krasa/inverted-pendulum/01_STM/Components/Inc" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core_A/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Components/Src/interrupts.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Kurus/Documents/github z krasa/inverted-pendulum/01_STM/Components/Inc" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core_A/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Components/Src/interrupts.d" -MT"Components/Src/interrupts.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Components/Src/interrupts.o"
+../Components/Src/interrupts.c:13:8: error: unknown type name 'float16_t'
+   13 | extern float16_t set_angle;
+      |        ^~~~~~~~~
+make: *** [Components/Src/subdir.mk:22: Components/Src/interrupts.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+22:39:20 **** Incremental Build of configuration Debug for project 01_STM ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Kurus/Documents/github z krasa/inverted-pendulum/01_STM/Components/Inc" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core_A/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Components/Src/interrupts.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Kurus/Documents/github z krasa/inverted-pendulum/01_STM/Components/Inc" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core_A/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Components/Src/interrupts.d" -MT"Components/Src/interrupts.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Components/Src/interrupts.o"
+arm-none-eabi-gcc -o "01_STM.elf" @"objects.list"  -larm_cortexM7lfsp_math -mcpu=cortex-m7 -T"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="01_STM.map" -Wl,--gc-sections -static -L"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\Lib\CMSIS_ARM" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.13.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Components/Src/interrupts.o: in function `HAL_TIM_IC_CaptureCallback':
+C:/Users/Kurus/Documents/github z krasa/inverted-pendulum/01_STM/Debug/../Components/Src/interrupts.c:29: undefined reference to `set_angle'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:69: 01_STM.elf] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+22:40:07 **** Incremental Build of configuration Debug for project 01_STM ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Kurus/Documents/github z krasa/inverted-pendulum/01_STM/Components/Inc" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core_A/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Components/Src/interrupts.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Kurus/Documents/github z krasa/inverted-pendulum/01_STM/Components/Inc" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core_A/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Components/Src/interrupts.d" -MT"Components/Src/interrupts.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Components/Src/interrupts.o"
+arm-none-eabi-gcc -o "01_STM.elf" @"objects.list"  -larm_cortexM7lfsp_math -mcpu=cortex-m7 -T"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="01_STM.map" -Wl,--gc-sections -static -L"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\Lib\CMSIS_ARM" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.13.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Components/Src/interrupts.o: in function `HAL_TIM_IC_CaptureCallback':
+C:/Users/Kurus/Documents/github z krasa/inverted-pendulum/01_STM/Debug/../Components/Src/interrupts.c:29: undefined reference to `set_angle'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:69: 01_STM.elf] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+22:41:20 **** Incremental Build of configuration Debug for project 01_STM ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Kurus/Documents/github z krasa/inverted-pendulum/01_STM/Components/Inc" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core_A/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Components/Src/interrupts.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Kurus/Documents/github z krasa/inverted-pendulum/01_STM/Components/Inc" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core_A/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Components/Src/interrupts.d" -MT"Components/Src/interrupts.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Components/Src/interrupts.o"
+../Components/Src/interrupts.c: In function 'HAL_TIM_IC_CaptureCallback':
+../Components/Src/interrupts.c:27:20: error: lvalue required as left operand of assignment
+   27 |         &set_angle = __HAL_TIM_GET_COUNTER(htim);
+      |                    ^
+../Components/Src/interrupts.c:28:20: error: lvalue required as left operand of assignment
+   28 |         &set_angle = set_angle*4.5;
+      |                    ^
+make: *** [Components/Src/subdir.mk:22: Components/Src/interrupts.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+22:43:48 **** Incremental Build of configuration Debug for project 01_STM ****
+make -j4 all 
+arm-none-eabi-gcc "../Components/Src/interrupts.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Kurus/Documents/github z krasa/inverted-pendulum/01_STM/Components/Inc" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core_A/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Components/Src/interrupts.d" -MT"Components/Src/interrupts.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Components/Src/interrupts.o"
+arm-none-eabi-gcc -o "01_STM.elf" @"objects.list"  -larm_cortexM7lfsp_math -mcpu=cortex-m7 -T"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="01_STM.map" -Wl,--gc-sections -static -L"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\Lib\CMSIS_ARM" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 01_STM.elf
+ 
+arm-none-eabi-size   01_STM.elf 
+arm-none-eabi-objdump -h -S  01_STM.elf  > "01_STM.list"
+   text	   data	    bss	    dec	    hex	filename
+  55360	    816	   4104	  60280	   eb78	01_STM.elf
+Finished building: default.size.stdout
+ 
+Finished building: 01_STM.list
+ 
+22:46:09 **** Incremental Build of configuration Debug for project 01_STM ****
+make -j4 all 
+arm-none-eabi-gcc "../Components/Src/interrupts.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Kurus/Documents/github z krasa/inverted-pendulum/01_STM/Components/Inc" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core_A/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Components/Src/interrupts.d" -MT"Components/Src/interrupts.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Components/Src/interrupts.o"
+arm-none-eabi-gcc -o "01_STM.elf" @"objects.list"  -larm_cortexM7lfsp_math -mcpu=cortex-m7 -T"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="01_STM.map" -Wl,--gc-sections -static -L"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\Lib\CMSIS_ARM" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 01_STM.elf
+ 
+arm-none-eabi-size   01_STM.elf 
+arm-none-eabi-objdump -h -S  01_STM.elf  > "01_STM.list"
+   text	   data	    bss	    dec	    hex	filename
+  55360	    816	   4104	  60280	   eb78	01_STM.elf
+Finished building: default.size.stdout
+ 
+Finished building: 01_STM.list
+ 
+22:49:56 **** Incremental Build of configuration Debug for project 01_STM ****
+make -j4 all 
+arm-none-eabi-gcc "../Components/Src/interrupts.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Kurus/Documents/github z krasa/inverted-pendulum/01_STM/Components/Inc" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core_A/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Components/Src/interrupts.d" -MT"Components/Src/interrupts.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Components/Src/interrupts.o"
+arm-none-eabi-gcc -o "01_STM.elf" @"objects.list"  -larm_cortexM7lfsp_math -mcpu=cortex-m7 -T"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="01_STM.map" -Wl,--gc-sections -static -L"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\Lib\CMSIS_ARM" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 01_STM.elf
+ 
+arm-none-eabi-size   01_STM.elf 
+arm-none-eabi-objdump -h -S  01_STM.elf  > "01_STM.list"
+   text	   data	    bss	    dec	    hex	filename
+  55344	    816	   4104	  60264	   eb68	01_STM.elf
+Finished building: default.size.stdout
+ 
+Finished building: 01_STM.list
+ 
+22:52:59 **** Incremental Build of configuration Debug for project 01_STM ****
+make -j4 all 
+arm-none-eabi-gcc "../Components/Src/interrupts.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Kurus/Documents/github z krasa/inverted-pendulum/01_STM/Components/Inc" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core_A/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Components/Src/interrupts.d" -MT"Components/Src/interrupts.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Components/Src/interrupts.o"
+arm-none-eabi-gcc -o "01_STM.elf" @"objects.list"  -larm_cortexM7lfsp_math -mcpu=cortex-m7 -T"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="01_STM.map" -Wl,--gc-sections -static -L"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\Lib\CMSIS_ARM" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 01_STM.elf
+ 
+arm-none-eabi-size   01_STM.elf 
+arm-none-eabi-objdump -h -S  01_STM.elf  > "01_STM.list"
+   text	   data	    bss	    dec	    hex	filename
+  55360	    816	   4104	  60280	   eb78	01_STM.elf
+Finished building: default.size.stdout
+ 
+Finished building: 01_STM.list
+ 
+22:54:16 **** Incremental Build of configuration Debug for project 01_STM ****
+make -j4 all 
+arm-none-eabi-gcc "../Components/Src/interrupts.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Kurus/Documents/github z krasa/inverted-pendulum/01_STM/Components/Inc" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core_A/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Components/Src/interrupts.d" -MT"Components/Src/interrupts.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Components/Src/interrupts.o"
+arm-none-eabi-gcc -o "01_STM.elf" @"objects.list"  -larm_cortexM7lfsp_math -mcpu=cortex-m7 -T"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="01_STM.map" -Wl,--gc-sections -static -L"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\Lib\CMSIS_ARM" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 01_STM.elf
+ 
+arm-none-eabi-size   01_STM.elf 
+arm-none-eabi-objdump -h -S  01_STM.elf  > "01_STM.list"
+   text	   data	    bss	    dec	    hex	filename
+  55328	    816	   4104	  60248	   eb58	01_STM.elf
+Finished building: default.size.stdout
+ 
+Finished building: 01_STM.list
+ 
+22:56:28 **** Incremental Build of configuration Debug for project 01_STM ****
+make -j4 all 
+arm-none-eabi-gcc "../Components/Src/interrupts.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Kurus/Documents/github z krasa/inverted-pendulum/01_STM/Components/Inc" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core_A/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Components/Src/interrupts.d" -MT"Components/Src/interrupts.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Components/Src/interrupts.o"
+arm-none-eabi-gcc -o "01_STM.elf" @"objects.list"  -larm_cortexM7lfsp_math -mcpu=cortex-m7 -T"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="01_STM.map" -Wl,--gc-sections -static -L"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\Lib\CMSIS_ARM" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 01_STM.elf
+ 
+arm-none-eabi-size   01_STM.elf 
+arm-none-eabi-objdump -h -S  01_STM.elf  > "01_STM.list"
+   text	   data	    bss	    dec	    hex	filename
+  55352	    816	   4104	  60272	   eb70	01_STM.elf
+Finished building: default.size.stdout
+ 
+Finished building: 01_STM.list
+ 
+22:57:29 **** Incremental Build of configuration Debug for project 01_STM ****
+make -j4 all 
+arm-none-eabi-gcc "../Components/Src/interrupts.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Kurus/Documents/github z krasa/inverted-pendulum/01_STM/Components/Inc" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core_A/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Components/Src/interrupts.d" -MT"Components/Src/interrupts.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Components/Src/interrupts.o"
+arm-none-eabi-gcc -o "01_STM.elf" @"objects.list"  -larm_cortexM7lfsp_math -mcpu=cortex-m7 -T"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="01_STM.map" -Wl,--gc-sections -static -L"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\Lib\CMSIS_ARM" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 01_STM.elf
+ 
+arm-none-eabi-size   01_STM.elf 
+arm-none-eabi-objdump -h -S  01_STM.elf  > "01_STM.list"
+   text	   data	    bss	    dec	    hex	filename
+  55352	    816	   4104	  60272	   eb70	01_STM.elf
+Finished building: default.size.stdout
+ 
+Finished building: 01_STM.list
+ 
+22:58:27 **** Incremental Build of configuration Debug for project 01_STM ****
+make -j4 all 
+arm-none-eabi-gcc "../Components/Src/interrupts.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Kurus/Documents/github z krasa/inverted-pendulum/01_STM/Components/Inc" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core_A/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Components/Src/interrupts.d" -MT"Components/Src/interrupts.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Components/Src/interrupts.o"
+arm-none-eabi-gcc -o "01_STM.elf" @"objects.list"  -larm_cortexM7lfsp_math -mcpu=cortex-m7 -T"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="01_STM.map" -Wl,--gc-sections -static -L"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\Lib\CMSIS_ARM" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 01_STM.elf
+ 
+arm-none-eabi-size   01_STM.elf 
+arm-none-eabi-objdump -h -S  01_STM.elf  > "01_STM.list"
+   text	   data	    bss	    dec	    hex	filename
+  55328	    816	   4104	  60248	   eb58	01_STM.elf
+Finished building: default.size.stdout
+ 
+Finished building: 01_STM.list
+ 
+23:06:22 **** Incremental Build of configuration Debug for project 01_STM ****
+make -j4 all 
+arm-none-eabi-gcc "../Components/Src/interrupts.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Kurus/Documents/github z krasa/inverted-pendulum/01_STM/Components/Inc" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core_A/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Components/Src/interrupts.d" -MT"Components/Src/interrupts.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Components/Src/interrupts.o"
+arm-none-eabi-gcc -o "01_STM.elf" @"objects.list"  -larm_cortexM7lfsp_math -mcpu=cortex-m7 -T"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="01_STM.map" -Wl,--gc-sections -static -L"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\Lib\CMSIS_ARM" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 01_STM.elf
+ 
+arm-none-eabi-size   01_STM.elf 
+arm-none-eabi-objdump -h -S  01_STM.elf  > "01_STM.list"
+   text	   data	    bss	    dec	    hex	filename
+  55352	    816	   4104	  60272	   eb70	01_STM.elf
+Finished building: default.size.stdout
+ 
+Finished building: 01_STM.list
+ 
+23:07:59 **** Incremental Build of configuration Debug for project 01_STM ****
+make -j4 all 
+arm-none-eabi-gcc "../Components/Src/interrupts.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Kurus/Documents/github z krasa/inverted-pendulum/01_STM/Components/Inc" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core_A/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Components/Src/interrupts.d" -MT"Components/Src/interrupts.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Components/Src/interrupts.o"
+arm-none-eabi-gcc -o "01_STM.elf" @"objects.list"  -larm_cortexM7lfsp_math -mcpu=cortex-m7 -T"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="01_STM.map" -Wl,--gc-sections -static -L"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\Lib\CMSIS_ARM" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 01_STM.elf
+ 
+arm-none-eabi-size   01_STM.elf 
+arm-none-eabi-objdump -h -S  01_STM.elf  > "01_STM.list"
+   text	   data	    bss	    dec	    hex	filename
+  55352	    816	   4104	  60272	   eb70	01_STM.elf
+Finished building: default.size.stdout
+ 
+Finished building: 01_STM.list
+ 
+23:10:21 **** Incremental Build of configuration Debug for project 01_STM ****
+make -j4 all 
+arm-none-eabi-gcc "../Components/Src/interrupts.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Kurus/Documents/github z krasa/inverted-pendulum/01_STM/Components/Inc" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core_A/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Components/Src/interrupts.d" -MT"Components/Src/interrupts.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Components/Src/interrupts.o"
+arm-none-eabi-gcc -o "01_STM.elf" @"objects.list"  -larm_cortexM7lfsp_math -mcpu=cortex-m7 -T"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="01_STM.map" -Wl,--gc-sections -static -L"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\Lib\CMSIS_ARM" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 01_STM.elf
+ 
+arm-none-eabi-size   01_STM.elf 
+arm-none-eabi-objdump -h -S  01_STM.elf  > "01_STM.list"
+   text	   data	    bss	    dec	    hex	filename
+  55360	    816	   4104	  60280	   eb78	01_STM.elf
+Finished building: default.size.stdout
+ 
+Finished building: 01_STM.list
+ 
+23:12:02 **** Incremental Build of configuration Debug for project 01_STM ****
+make -j4 all 
+arm-none-eabi-gcc "../Components/Src/interrupts.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Kurus/Documents/github z krasa/inverted-pendulum/01_STM/Components/Inc" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core_A/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Components/Src/interrupts.d" -MT"Components/Src/interrupts.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Components/Src/interrupts.o"
+arm-none-eabi-gcc -o "01_STM.elf" @"objects.list"  -larm_cortexM7lfsp_math -mcpu=cortex-m7 -T"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="01_STM.map" -Wl,--gc-sections -static -L"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\Lib\CMSIS_ARM" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 01_STM.elf
+ 
+arm-none-eabi-size   01_STM.elf 
+arm-none-eabi-objdump -h -S  01_STM.elf  > "01_STM.list"
+   text	   data	    bss	    dec	    hex	filename
+  55368	    816	   4104	  60288	   eb80	01_STM.elf
+Finished building: default.size.stdout
+ 
+Finished building: 01_STM.list
+ 
+23:17:58 **** Incremental Build of configuration Debug for project 01_STM ****
+make -j4 all 
+arm-none-eabi-gcc "../Components/Src/interrupts.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Kurus/Documents/github z krasa/inverted-pendulum/01_STM/Components/Inc" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core_A/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Components/Src/interrupts.d" -MT"Components/Src/interrupts.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Components/Src/interrupts.o"
+../Components/Src/interrupts.c: In function 'HAL_TIM_IC_CaptureCallback':
+../Components/Src/interrupts.c:28:30: error: invalid operands to binary % (have 'float32_t' {aka 'float'} and 'int')
+   28 |         set_angle = set_angle%360;
+      |                              ^
+make: *** [Components/Src/subdir.mk:22: Components/Src/interrupts.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+23:19:13 **** Incremental Build of configuration Debug for project 01_STM ****
+make -j4 all 
+arm-none-eabi-gcc "../Components/Src/interrupts.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Kurus/Documents/github z krasa/inverted-pendulum/01_STM/Components/Inc" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core_A/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Components/Src/interrupts.d" -MT"Components/Src/interrupts.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Components/Src/interrupts.o"
+../Components/Src/interrupts.c: In function 'HAL_TIM_IC_CaptureCallback':
+../Components/Src/interrupts.c:28:32: error: invalid operands to binary % (have 'float32_t' {aka 'float'} and 'int')
+   28 |         set_angle = (set_angle % 360 + 360) % 360;
+      |                                ^
+make: *** [Components/Src/subdir.mk:22: Components/Src/interrupts.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+23:21:57 **** Incremental Build of configuration Debug for project 01_STM ****
+make -j4 all 
+arm-none-eabi-gcc "../Components/Src/interrupts.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Kurus/Documents/github z krasa/inverted-pendulum/01_STM/Components/Inc" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core_A/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Components/Src/interrupts.d" -MT"Components/Src/interrupts.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Components/Src/interrupts.o"
+arm-none-eabi-gcc -o "01_STM.elf" @"objects.list"  -larm_cortexM7lfsp_math -mcpu=cortex-m7 -T"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="01_STM.map" -Wl,--gc-sections -static -L"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\Lib\CMSIS_ARM" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 01_STM.elf
+ 
+arm-none-eabi-size   01_STM.elf 
+arm-none-eabi-objdump -h -S  01_STM.elf  > "01_STM.list"
+   text	   data	    bss	    dec	    hex	filename
+  56104	    816	   4104	  61024	   ee60	01_STM.elf
+Finished building: default.size.stdout
+ 
+Finished building: 01_STM.list
+ 
+23:23:26 **** Incremental Build of configuration Debug for project 01_STM ****
+make -j4 all 
+arm-none-eabi-gcc "../Components/Src/interrupts.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Kurus/Documents/github z krasa/inverted-pendulum/01_STM/Components/Inc" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core_A/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Components/Src/interrupts.d" -MT"Components/Src/interrupts.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Components/Src/interrupts.o"
+arm-none-eabi-gcc -o "01_STM.elf" @"objects.list"  -larm_cortexM7lfsp_math -mcpu=cortex-m7 -T"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="01_STM.map" -Wl,--gc-sections -static -L"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\Lib\CMSIS_ARM" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 01_STM.elf
+ 
+arm-none-eabi-size   01_STM.elf 
+arm-none-eabi-objdump -h -S  01_STM.elf  > "01_STM.list"
+   text	   data	    bss	    dec	    hex	filename
+  56064	    816	   4104	  60984	   ee38	01_STM.elf
+Finished building: default.size.stdout
+ 
+Finished building: 01_STM.list
+ 
+23:26:19 **** Incremental Build of configuration Debug for project 01_STM ****
+make -j4 all 
+arm-none-eabi-gcc "../Components/Src/interrupts.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Kurus/Documents/github z krasa/inverted-pendulum/01_STM/Components/Inc" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core_A/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Components/Src/interrupts.d" -MT"Components/Src/interrupts.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Components/Src/interrupts.o"
+arm-none-eabi-gcc -o "01_STM.elf" @"objects.list"  -larm_cortexM7lfsp_math -mcpu=cortex-m7 -T"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="01_STM.map" -Wl,--gc-sections -static -L"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\Lib\CMSIS_ARM" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 01_STM.elf
+ 
+arm-none-eabi-size   01_STM.elf 
+arm-none-eabi-objdump -h -S  01_STM.elf  > "01_STM.list"
+   text	   data	    bss	    dec	    hex	filename
+  56064	    816	   4104	  60984	   ee38	01_STM.elf
+Finished building: default.size.stdout
+ 
+Finished building: 01_STM.list
+ 
+23:27:17 **** Incremental Build of configuration Debug for project 01_STM ****
+make -j4 all 
+arm-none-eabi-size   01_STM.elf 
+   text	   data	    bss	    dec	    hex	filename
+  56064	    816	   4104	  60984	   ee38	01_STM.elf
+Finished building: default.size.stdout
+ 
+23:30:04 **** Incremental Build of configuration Debug for project 01_STM ****
+make -j4 all 
+arm-none-eabi-gcc "../Components/Src/interrupts.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Kurus/Documents/github z krasa/inverted-pendulum/01_STM/Components/Inc" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core_A/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Components/Src/interrupts.d" -MT"Components/Src/interrupts.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Components/Src/interrupts.o"
+arm-none-eabi-gcc -o "01_STM.elf" @"objects.list"  -larm_cortexM7lfsp_math -mcpu=cortex-m7 -T"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="01_STM.map" -Wl,--gc-sections -static -L"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\Lib\CMSIS_ARM" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 01_STM.elf
+ 
+arm-none-eabi-size   01_STM.elf 
+arm-none-eabi-objdump -h -S  01_STM.elf  > "01_STM.list"
+   text	   data	    bss	    dec	    hex	filename
+  56072	    816	   4104	  60992	   ee40	01_STM.elf
+Finished building: default.size.stdout
+ 
+Finished building: 01_STM.list
+ 
+23:31:50 **** Incremental Build of configuration Debug for project 01_STM ****
+make -j4 all 
+arm-none-eabi-gcc "../Components/Src/interrupts.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Kurus/Documents/github z krasa/inverted-pendulum/01_STM/Components/Inc" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core_A/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Components/Src/interrupts.d" -MT"Components/Src/interrupts.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Components/Src/interrupts.o"
+arm-none-eabi-gcc -o "01_STM.elf" @"objects.list"  -larm_cortexM7lfsp_math -mcpu=cortex-m7 -T"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="01_STM.map" -Wl,--gc-sections -static -L"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\Lib\CMSIS_ARM" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 01_STM.elf
+ 
+arm-none-eabi-size   01_STM.elf 
+arm-none-eabi-objdump -h -S  01_STM.elf  > "01_STM.list"
+   text	   data	    bss	    dec	    hex	filename
+  56112	    816	   4104	  61032	   ee68	01_STM.elf
+Finished building: default.size.stdout
+ 
+Finished building: 01_STM.list
+ 
+23:32:20 **** Incremental Build of configuration Debug for project 01_STM ****
+make -j4 all 
+arm-none-eabi-gcc "../Components/Src/interrupts.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Kurus/Documents/github z krasa/inverted-pendulum/01_STM/Components/Inc" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core_A/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Components/Src/interrupts.d" -MT"Components/Src/interrupts.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Components/Src/interrupts.o"
+arm-none-eabi-gcc -o "01_STM.elf" @"objects.list"  -larm_cortexM7lfsp_math -mcpu=cortex-m7 -T"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="01_STM.map" -Wl,--gc-sections -static -L"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\Lib\CMSIS_ARM" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 01_STM.elf
+ 
+arm-none-eabi-size   01_STM.elf 
+arm-none-eabi-objdump -h -S  01_STM.elf  > "01_STM.list"
+   text	   data	    bss	    dec	    hex	filename
+  56112	    816	   4104	  61032	   ee68	01_STM.elf
+Finished building: default.size.stdout
+ 
+Finished building: 01_STM.list
+ 
+23:33:16 **** Incremental Build of configuration Debug for project 01_STM ****
+make -j4 all 
+arm-none-eabi-gcc "../Components/Src/interrupts.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Kurus/Documents/github z krasa/inverted-pendulum/01_STM/Components/Inc" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core_A/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Components/Src/interrupts.d" -MT"Components/Src/interrupts.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Components/Src/interrupts.o"
+arm-none-eabi-gcc -o "01_STM.elf" @"objects.list"  -larm_cortexM7lfsp_math -mcpu=cortex-m7 -T"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="01_STM.map" -Wl,--gc-sections -static -L"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\Lib\CMSIS_ARM" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 01_STM.elf
+ 
+arm-none-eabi-size   01_STM.elf 
+arm-none-eabi-objdump -h -S  01_STM.elf  > "01_STM.list"
+   text	   data	    bss	    dec	    hex	filename
+  56112	    816	   4104	  61032	   ee68	01_STM.elf
+Finished building: default.size.stdout
+ 
+Finished building: 01_STM.list
+ 
+23:33:38 **** Incremental Build of configuration Debug for project 01_STM ****
+make -j4 all 
+arm-none-eabi-gcc "../Components/Src/interrupts.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Kurus/Documents/github z krasa/inverted-pendulum/01_STM/Components/Inc" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core_A/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Components/Src/interrupts.d" -MT"Components/Src/interrupts.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Components/Src/interrupts.o"
+arm-none-eabi-gcc -o "01_STM.elf" @"objects.list"  -larm_cortexM7lfsp_math -mcpu=cortex-m7 -T"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="01_STM.map" -Wl,--gc-sections -static -L"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\Lib\CMSIS_ARM" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 01_STM.elf
+ 
+arm-none-eabi-size   01_STM.elf 
+arm-none-eabi-objdump -h -S  01_STM.elf  > "01_STM.list"
+   text	   data	    bss	    dec	    hex	filename
+  56112	    816	   4104	  61032	   ee68	01_STM.elf
+Finished building: default.size.stdout
+ 
+Finished building: 01_STM.list
+ 
+23:36:38 **** Incremental Build of configuration Debug for project 01_STM ****
+make -j4 all 
+arm-none-eabi-gcc "../Components/Src/interrupts.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Kurus/Documents/github z krasa/inverted-pendulum/01_STM/Components/Inc" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core_A/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Components/Src/interrupts.d" -MT"Components/Src/interrupts.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Components/Src/interrupts.o"
+../Components/Src/interrupts.c: In function 'HAL_TIM_IC_CaptureCallback':
+../Components/Src/interrupts.c:28:9: error: 'set_angle_temp' undeclared (first use in this function); did you mean 'set_angle'?
+   28 |         set_angle_temp = fmod(angle_overflow, 360.0);
+      |         ^~~~~~~~~~~~~~
+      |         set_angle
+../Components/Src/interrupts.c:28:9: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Components/Src/subdir.mk:22: Components/Src/interrupts.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+23:36:50 **** Incremental Build of configuration Debug for project 01_STM ****
+make -j4 all 
+arm-none-eabi-gcc "../Components/Src/interrupts.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Kurus/Documents/github z krasa/inverted-pendulum/01_STM/Components/Inc" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core_A/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Components/Src/interrupts.d" -MT"Components/Src/interrupts.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Components/Src/interrupts.o"
+arm-none-eabi-gcc -o "01_STM.elf" @"objects.list"  -larm_cortexM7lfsp_math -mcpu=cortex-m7 -T"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="01_STM.map" -Wl,--gc-sections -static -L"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\Lib\CMSIS_ARM" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 01_STM.elf
+ 
+arm-none-eabi-size   01_STM.elf 
+arm-none-eabi-objdump -h -S  01_STM.elf  > "01_STM.list"
+   text	   data	    bss	    dec	    hex	filename
+  56104	    816	   4104	  61024	   ee60	01_STM.elf
+Finished building: default.size.stdout
+ 
+Finished building: 01_STM.list
+ 
+23:37:50 **** Incremental Build of configuration Debug for project 01_STM ****
+make -j4 all 
+arm-none-eabi-gcc "../Components/Src/interrupts.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Kurus/Documents/github z krasa/inverted-pendulum/01_STM/Components/Inc" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core_A/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Components/Src/interrupts.d" -MT"Components/Src/interrupts.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Components/Src/interrupts.o"
+arm-none-eabi-gcc -o "01_STM.elf" @"objects.list"  -larm_cortexM7lfsp_math -mcpu=cortex-m7 -T"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="01_STM.map" -Wl,--gc-sections -static -L"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\Lib\CMSIS_ARM" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 01_STM.elf
+ 
+arm-none-eabi-size   01_STM.elf 
+arm-none-eabi-objdump -h -S  01_STM.elf  > "01_STM.list"
+   text	   data	    bss	    dec	    hex	filename
+  56112	    816	   4104	  61032	   ee68	01_STM.elf
+Finished building: default.size.stdout
+ 
+Finished building: 01_STM.list
+ 
+23:39:23 **** Incremental Build of configuration Debug for project 01_STM ****
+make -j4 all 
+arm-none-eabi-gcc "../Components/Src/interrupts.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Kurus/Documents/github z krasa/inverted-pendulum/01_STM/Components/Inc" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core_A/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Components/Src/interrupts.d" -MT"Components/Src/interrupts.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Components/Src/interrupts.o"
+arm-none-eabi-gcc -o "01_STM.elf" @"objects.list"  -larm_cortexM7lfsp_math -mcpu=cortex-m7 -T"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="01_STM.map" -Wl,--gc-sections -static -L"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\Lib\CMSIS_ARM" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 01_STM.elf
+ 
+arm-none-eabi-size   01_STM.elf 
+arm-none-eabi-objdump -h -S  01_STM.elf  > "01_STM.list"
+   text	   data	    bss	    dec	    hex	filename
+  56112	    816	   4104	  61032	   ee68	01_STM.elf
+Finished building: default.size.stdout
+ 
+Finished building: 01_STM.list
+ 
+23:43:22 **** Incremental Build of configuration Debug for project 01_STM ****
+make -j4 all 
+arm-none-eabi-gcc "../Components/Src/interrupts.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Kurus/Documents/github z krasa/inverted-pendulum/01_STM/Components/Inc" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core_A/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Components/Src/interrupts.d" -MT"Components/Src/interrupts.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Components/Src/interrupts.o"
+arm-none-eabi-gcc -o "01_STM.elf" @"objects.list"  -larm_cortexM7lfsp_math -mcpu=cortex-m7 -T"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="01_STM.map" -Wl,--gc-sections -static -L"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\Lib\CMSIS_ARM" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 01_STM.elf
+ 
+arm-none-eabi-size   01_STM.elf 
+arm-none-eabi-objdump -h -S  01_STM.elf  > "01_STM.list"
+   text	   data	    bss	    dec	    hex	filename
+  56104	    816	   4104	  61024	   ee60	01_STM.elf
+Finished building: default.size.stdout
+ 
+Finished building: 01_STM.list
+ 
+23:46:06 **** Incremental Build of configuration Debug for project 01_STM ****
+make -j4 all 
+arm-none-eabi-gcc "../Components/Src/interrupts.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Kurus/Documents/github z krasa/inverted-pendulum/01_STM/Components/Inc" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core_A/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Components/Src/interrupts.d" -MT"Components/Src/interrupts.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Components/Src/interrupts.o"
+arm-none-eabi-gcc -o "01_STM.elf" @"objects.list"  -larm_cortexM7lfsp_math -mcpu=cortex-m7 -T"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="01_STM.map" -Wl,--gc-sections -static -L"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\Lib\CMSIS_ARM" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 01_STM.elf
+ 
+arm-none-eabi-size   01_STM.elf 
+arm-none-eabi-objdump -h -S  01_STM.elf  > "01_STM.list"
+   text	   data	    bss	    dec	    hex	filename
+  56104	    816	   4104	  61024	   ee60	01_STM.elf
+Finished building: default.size.stdout
+ 
+Finished building: 01_STM.list
+ 
+23:47:41 **** Incremental Build of configuration Debug for project 01_STM ****
+make -j4 all 
+arm-none-eabi-gcc "../Components/Src/interrupts.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Kurus/Documents/github z krasa/inverted-pendulum/01_STM/Components/Inc" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core_A/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Components/Src/interrupts.d" -MT"Components/Src/interrupts.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Components/Src/interrupts.o"
+arm-none-eabi-gcc -o "01_STM.elf" @"objects.list"  -larm_cortexM7lfsp_math -mcpu=cortex-m7 -T"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="01_STM.map" -Wl,--gc-sections -static -L"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\Lib\CMSIS_ARM" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 01_STM.elf
+ 
+arm-none-eabi-size   01_STM.elf 
+arm-none-eabi-objdump -h -S  01_STM.elf  > "01_STM.list"
+   text	   data	    bss	    dec	    hex	filename
+  56128	    816	   4104	  61048	   ee78	01_STM.elf
+Finished building: default.size.stdout
+ 
+Finished building: 01_STM.list
+ 
+23:49:39 **** Incremental Build of configuration Debug for project 01_STM ****
+make -j4 all 
+arm-none-eabi-gcc "../Components/Src/interrupts.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Kurus/Documents/github z krasa/inverted-pendulum/01_STM/Components/Inc" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core_A/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Components/Src/interrupts.d" -MT"Components/Src/interrupts.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Components/Src/interrupts.o"
+arm-none-eabi-gcc -o "01_STM.elf" @"objects.list"  -larm_cortexM7lfsp_math -mcpu=cortex-m7 -T"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="01_STM.map" -Wl,--gc-sections -static -L"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\Lib\CMSIS_ARM" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 01_STM.elf
+ 
+arm-none-eabi-size   01_STM.elf 
+arm-none-eabi-objdump -h -S  01_STM.elf  > "01_STM.list"
+   text	   data	    bss	    dec	    hex	filename
+  56128	    816	   4104	  61048	   ee78	01_STM.elf
+Finished building: default.size.stdout
+ 
+Finished building: 01_STM.list
+ 
+23:52:16 **** Incremental Build of configuration Debug for project 01_STM ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Kurus/Documents/github z krasa/inverted-pendulum/01_STM/Components/Inc" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core_A/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Components/Src/interrupts.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Kurus/Documents/github z krasa/inverted-pendulum/01_STM/Components/Inc" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core_A/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Components/Src/interrupts.d" -MT"Components/Src/interrupts.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Components/Src/interrupts.o"
+arm-none-eabi-gcc -o "01_STM.elf" @"objects.list"  -larm_cortexM7lfsp_math -mcpu=cortex-m7 -T"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="01_STM.map" -Wl,--gc-sections -static -L"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\Lib\CMSIS_ARM" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.13.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/main.o:C:/Users/Kurus/Documents/github z krasa/inverted-pendulum/01_STM/Debug/../Core/Src/main.c:56: multiple definition of `set_angle'; ./Components/Src/interrupts.o:C:/Users/Kurus/Documents/github z krasa/inverted-pendulum/01_STM/Debug/../Components/Src/interrupts.c:14: first defined here
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:69: 01_STM.elf] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+23:52:35 **** Incremental Build of configuration Debug for project 01_STM ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Kurus/Documents/github z krasa/inverted-pendulum/01_STM/Components/Inc" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core_A/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Components/Src/interrupts.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Kurus/Documents/github z krasa/inverted-pendulum/01_STM/Components/Inc" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core_A/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Components/Src/interrupts.d" -MT"Components/Src/interrupts.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Components/Src/interrupts.o"
+arm-none-eabi-gcc -o "01_STM.elf" @"objects.list"  -larm_cortexM7lfsp_math -mcpu=cortex-m7 -T"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="01_STM.map" -Wl,--gc-sections -static -L"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\Lib\CMSIS_ARM" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 01_STM.elf
+ 
+arm-none-eabi-size   01_STM.elf 
+arm-none-eabi-objdump -h -S  01_STM.elf  > "01_STM.list"
+   text	   data	    bss	    dec	    hex	filename
+  56128	    816	   4104	  61048	   ee78	01_STM.elf
+Finished building: default.size.stdout
+ 
+Finished building: 01_STM.list
+ 
+23:54:06 **** Incremental Build of configuration Debug for project 01_STM ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Kurus/Documents/github z krasa/inverted-pendulum/01_STM/Components/Inc" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core_A/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Components/Src/interrupts.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Kurus/Documents/github z krasa/inverted-pendulum/01_STM/Components/Inc" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core_A/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Components/Src/interrupts.d" -MT"Components/Src/interrupts.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Components/Src/interrupts.o"
+arm-none-eabi-gcc -o "01_STM.elf" @"objects.list"  -larm_cortexM7lfsp_math -mcpu=cortex-m7 -T"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="01_STM.map" -Wl,--gc-sections -static -L"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\Lib\CMSIS_ARM" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 01_STM.elf
+ 
+arm-none-eabi-size   01_STM.elf 
+arm-none-eabi-objdump -h -S  01_STM.elf  > "01_STM.list"
+   text	   data	    bss	    dec	    hex	filename
+  56128	    816	   4104	  61048	   ee78	01_STM.elf
+Finished building: default.size.stdout
+ 
+Finished building: 01_STM.list
+ 
+23:55:22 **** Incremental Build of configuration Debug for project 01_STM ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Kurus/Documents/github z krasa/inverted-pendulum/01_STM/Components/Inc" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core_A/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Components/Src/interrupts.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Kurus/Documents/github z krasa/inverted-pendulum/01_STM/Components/Inc" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core_A/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Components/Src/interrupts.d" -MT"Components/Src/interrupts.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Components/Src/interrupts.o"
+arm-none-eabi-gcc -o "01_STM.elf" @"objects.list"  -larm_cortexM7lfsp_math -mcpu=cortex-m7 -T"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="01_STM.map" -Wl,--gc-sections -static -L"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\Lib\CMSIS_ARM" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.13.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Components/Src/interrupts.o: in function `HAL_TIM_IC_CaptureCallback':
+C:/Users/Kurus/Documents/github z krasa/inverted-pendulum/01_STM/Debug/../Components/Src/interrupts.c:30: undefined reference to `set_angle'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:69: 01_STM.elf] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+23:56:05 **** Incremental Build of configuration Debug for project 01_STM ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Kurus/Documents/github z krasa/inverted-pendulum/01_STM/Components/Inc" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core_A/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "01_STM.elf" @"objects.list"  -larm_cortexM7lfsp_math -mcpu=cortex-m7 -T"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="01_STM.map" -Wl,--gc-sections -static -L"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\Lib\CMSIS_ARM" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 01_STM.elf
+ 
+arm-none-eabi-size   01_STM.elf 
+arm-none-eabi-objdump -h -S  01_STM.elf  > "01_STM.list"
+   text	   data	    bss	    dec	    hex	filename
+  56128	    816	   4104	  61048	   ee78	01_STM.elf
+Finished building: default.size.stdout
+ 
+Finished building: 01_STM.list
+ 

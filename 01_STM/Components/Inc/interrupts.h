@@ -24,6 +24,7 @@
 
 #include "AS5600.h"
 #include <stdio.h>
+#include "arm_math.h"
 
 #include "main.h"
 
