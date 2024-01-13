@@ -46,6 +46,8 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  E:/___STUDIA/__________AKTUALNE/SM/Projekt/ws/01_STM/Components/Inc/AS5600.h \
  E:/___STUDIA/__________AKTUALNE/SM/Projekt/ws/01_STM/Components/Inc/interrupts.h \
  E:/___STUDIA/__________AKTUALNE/SM/Projekt/ws/01_STM/Components/Inc/AS5600.h \
+ E:/___STUDIA/__________AKTUALNE/SM/Projekt/ws/01_STM/Components/Inc/miscellaneous.h \
+ E:/___STUDIA/__________AKTUALNE/SM/Projekt/ws/01_STM/Components/Inc/init.h \
  ../Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include/arm_math.h \
  ../Drivers/CMSIS/Include/cmsis_compiler.h
 ../Core/Inc/main.h:
@@ -104,5 +106,7 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 E:/___STUDIA/__________AKTUALNE/SM/Projekt/ws/01_STM/Components/Inc/AS5600.h:
 E:/___STUDIA/__________AKTUALNE/SM/Projekt/ws/01_STM/Components/Inc/interrupts.h:
 E:/___STUDIA/__________AKTUALNE/SM/Projekt/ws/01_STM/Components/Inc/AS5600.h:
+E:/___STUDIA/__________AKTUALNE/SM/Projekt/ws/01_STM/Components/Inc/miscellaneous.h:
+E:/___STUDIA/__________AKTUALNE/SM/Projekt/ws/01_STM/Components/Inc/init.h:
 ../Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include/arm_math.h:
 ../Drivers/CMSIS/Include/cmsis_compiler.h:

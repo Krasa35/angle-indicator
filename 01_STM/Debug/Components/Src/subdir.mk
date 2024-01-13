@@ -6,15 +6,21 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
 ../Components/Src/AS5600.c \
-../Components/Src/interrupts.c 
+../Components/Src/init.c \
+../Components/Src/interrupts.c \
+../Components/Src/miscellaneous.c 
 
 OBJS += \
 ./Components/Src/AS5600.o \
-./Components/Src/interrupts.o 
+./Components/Src/init.o \
+./Components/Src/interrupts.o \
+./Components/Src/miscellaneous.o 
 
 C_DEPS += \
 ./Components/Src/AS5600.d \
-./Components/Src/interrupts.d 
+./Components/Src/init.d \
+./Components/Src/interrupts.d \
+./Components/Src/miscellaneous.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
@@ -24,7 +30,7 @@ Components/Src/%.o Components/Src/%.su Components/Src/%.cyclo: ../Components/Src
 clean: clean-Components-2f-Src
 
 clean-Components-2f-Src:
-	-$(RM) ./Components/Src/AS5600.cyclo ./Components/Src/AS5600.d ./Components/Src/AS5600.o ./Components/Src/AS5600.su ./Components/Src/interrupts.cyclo ./Components/Src/interrupts.d ./Components/Src/interrupts.o ./Components/Src/interrupts.su
+	-$(RM) ./Components/Src/AS5600.cyclo ./Components/Src/AS5600.d ./Components/Src/AS5600.o ./Components/Src/AS5600.su ./Components/Src/init.cyclo ./Components/Src/init.d ./Components/Src/init.o ./Components/Src/init.su ./Components/Src/interrupts.cyclo ./Components/Src/interrupts.d ./Components/Src/interrupts.o ./Components/Src/interrupts.su ./Components/Src/miscellaneous.cyclo ./Components/Src/miscellaneous.d ./Components/Src/miscellaneous.o ./Components/Src/miscellaneous.su
 
 .PHONY: clean-Components-2f-Src
 

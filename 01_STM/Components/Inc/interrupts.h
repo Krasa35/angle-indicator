@@ -25,29 +25,11 @@
 #include "AS5600.h"
 #include <stdio.h>
 
-#include "main.h"
 #include <string.h>
+#include "miscellaneous.h"
+#include "init.h"
 
-#define MAX_STRING_LENGTH 255
 
-
-struct _MODE
-{
-	char* _DEBUG;
-	char* _REMOTE;
-	char* _MANUAL;
-};
-
-typedef struct _hbufUART
-{
-	struct 	_MODE	mode;
-	char 			b;
-	char 			receivedBuffer[MAX_STRING_LENGTH];
-	char			temp[MAX_STRING_LENGTH];
-	uint8_t 		bufferIndex;
-};
-
-void _MODE_INIT(struct _MODE* handle);
 
 
 

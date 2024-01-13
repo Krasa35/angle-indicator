@@ -1,4 +1,0 @@
-../Components/Src/interrupts.c:17:6:_MODE_INIT	16	static
-../Components/Src/interrupts.c:23:6:HAL_TIM_PeriodElapsedCallback	56	static
-../Components/Src/interrupts.c:40:6:HAL_UART_RxCpltCallback	16	static
-../Components/Src/interrupts.c:94:6:processCommand	16	static
