@@ -54,6 +54,7 @@
 
 /* USER CODE BEGIN PV */
 struct AS5600 device;
+uint8_t* msg;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -105,14 +106,11 @@ int main(void)
   MX_FATFS_Init();
   MX_TIM4_Init();
   /* USER CODE BEGIN 2 */
-  HAL_UART_Init(&huart3);
+  HAL_UART_Receive_IT(&huart3, (uint8_t*)&msg, 1);
   AS5600_Init(&device);
   HAL_TIM_Base_Start_IT(&htim3);
   HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_1);
   HAL_GPIO_WritePin(Dir_GPIO_Port, Dir_Pin, GPIO_PIN_SET);
-  float32_t a[] = {1.0,1.0};
-  float32_t a_amp = 0;
-  arm_cmplx_mag_f32(a, &a_amp, 1);
   /* USER CODE END 2 */
 
   /* Infinite loop */

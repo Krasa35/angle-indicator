@@ -1,10 +1,61 @@
-15:48:34 **** Incremental Build of configuration Debug for project 01_STM ****
-make -j4 all 
+18:47:45 **** Incremental Build of configuration Debug for project 01_STM ****
+make -j12 all 
+arm-none-eabi-gcc "../Components/Src/interrupts.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I"E:/___STUDIA/__________AKTUALNE/SM/Projekt/ws/01_STM/Components/Inc" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/Core_A/Include/ -I../Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Components/Src/interrupts.d" -MT"Components/Src/interrupts.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Components/Src/interrupts.o"
+In file included from ../Components/Src/interrupts.c:11:
+E:/___STUDIA/__________AKTUALNE/SM/Projekt/ws/01_STM/Components/Inc/interrupts.h:48:1: warning: useless storage class specifier in empty declaration
+   48 | };
+      | ^
+../Components/Src/interrupts.c: In function 'processCommand':
+../Components/Src/interrupts.c:99:35: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit_IT' differ in signedness [-Wpointer-sign]
+   99 |     HAL_UART_Transmit_IT(&huart3, "Option 1 selected\r\n", strlen("Option 1 selected\r\n"));
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~~
+      |                                   |
+      |                                   char *
+In file included from ../Core/Inc/stm32f7xx_hal_conf.h:415,
+                 from ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from E:/___STUDIA/__________AKTUALNE/SM/Projekt/ws/01_STM/Components/Inc/interrupts.h:15,
+                 from ../Components/Src/interrupts.c:11:
+../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart.h:1555:82: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
+ 1555 | HAL_StatusTypeDef HAL_UART_Transmit_IT(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size);
+      |                                                                   ~~~~~~~~~~~~~~~^~~~~
+../Components/Src/interrupts.c:104:35: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit_IT' differ in signedness [-Wpointer-sign]
+  104 |     HAL_UART_Transmit_IT(&huart3, "Option 2 selected\r\n", strlen("Option 2 selected\r\n"));
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~~
+      |                                   |
+      |                                   char *
+In file included from ../Core/Inc/stm32f7xx_hal_conf.h:415,
+                 from ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from E:/___STUDIA/__________AKTUALNE/SM/Projekt/ws/01_STM/Components/Inc/interrupts.h:15,
+                 from ../Components/Src/interrupts.c:11:
+../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart.h:1555:82: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
+ 1555 | HAL_StatusTypeDef HAL_UART_Transmit_IT(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size);
+      |                                                                   ~~~~~~~~~~~~~~~^~~~~
+../Components/Src/interrupts.c:109:35: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit_IT' differ in signedness [-Wpointer-sign]
+  109 |     HAL_UART_Transmit_IT(&huart3, "Invalid command\r\n", strlen("Invalid command\r\n"));
+      |                                   ^~~~~~~~~~~~~~~~~~~~~
+      |                                   |
+      |                                   char *
+In file included from ../Core/Inc/stm32f7xx_hal_conf.h:415,
+                 from ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from E:/___STUDIA/__________AKTUALNE/SM/Projekt/ws/01_STM/Components/Inc/interrupts.h:15,
+                 from ../Components/Src/interrupts.c:11:
+../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart.h:1555:82: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
+ 1555 | HAL_StatusTypeDef HAL_UART_Transmit_IT(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size);
+      |                                                                   ~~~~~~~~~~~~~~~^~~~~
+arm-none-eabi-gcc -o "01_STM.elf" @"objects.list"  -larm_cortexM7lfsp_math -mcpu=cortex-m7 -T"E:\___STUDIA\__________AKTUALNE\SM\Projekt\ws\01_STM\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="01_STM.map" -Wl,--gc-sections -static -L"E:\___STUDIA\__________AKTUALNE\SM\Projekt\ws\01_STM\Lib\CMSIS_ARM" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 01_STM.elf
+ 
 arm-none-eabi-size   01_STM.elf 
+arm-none-eabi-objdump -h -S  01_STM.elf  > "01_STM.list"
    text	   data	    bss	    dec	    hex	filename
-  55092	    816	   4024	  59932	   ea1c	01_STM.elf
+  56312	    816	   4096	  61224	   ef28	01_STM.elf
 Finished building: default.size.stdout
  
+Finished building: 01_STM.list
+ 
 
-15:48:34 Build Finished. 0 errors, 0 warnings. (took 568ms)
+18:47:47 Build Finished. 0 errors, 4 warnings. (took 1s.486ms)
 
