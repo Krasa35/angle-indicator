@@ -12,10 +12,12 @@
 
 extern struct AS5600 device;
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
+	if (htim->Instance == TIM3) {
 	  float zmienna = AS5600_Angle(&device);
 	  char buffer[20];  // Adjust the size as needed
 	  int len = snprintf(buffer, sizeof(buffer), "%f", zmienna);
 	  buffer[len++] = '\r';
 	  buffer[len++] = '\n';
-	  HAL_UART_Transmit(&huart3, (uint8_t *)buffer, len, HAL_MAX_DELAY);
+	  HAL_UART_Transmit(&huart3, (uint8_t *)buffer, len, 100);
+	}
 }

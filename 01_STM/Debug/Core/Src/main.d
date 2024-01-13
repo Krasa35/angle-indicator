@@ -43,9 +43,11 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Middlewares/Third_Party/FatFs/src/ff.h ../FATFS/Target/user_diskio.h \
  ../Core/Inc/i2c.h ../Core/Inc/spi.h ../Core/Inc/tim.h \
  ../Core/Inc/usart.h ../Core/Inc/usb_otg.h ../Core/Inc/gpio.h \
- E:/___STUDIA/__________AKTUALNE/SM/Projekt/ws/01_STM/Components/Inc/AS5600.h \
- E:/___STUDIA/__________AKTUALNE/SM/Projekt/ws/01_STM/Components/Inc/interrupts.h \
- E:/___STUDIA/__________AKTUALNE/SM/Projekt/ws/01_STM/Components/Inc/AS5600.h
+ C:/Users/Kurus/Documents/github\ z\ krasa/inverted-pendulum/01_STM/Components/Inc/AS5600.h \
+ C:/Users/Kurus/Documents/github\ z\ krasa/inverted-pendulum/01_STM/Components/Inc/interrupts.h \
+ C:/Users/Kurus/Documents/github\ z\ krasa/inverted-pendulum/01_STM/Components/Inc/AS5600.h \
+ ../Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include/arm_math.h \
+ ../Drivers/CMSIS/Include/cmsis_compiler.h
 ../Core/Inc/main.h:
 ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h:
 ../Core/Inc/stm32f7xx_hal_conf.h:
@@ -99,6 +101,8 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Core/Inc/usart.h:
 ../Core/Inc/usb_otg.h:
 ../Core/Inc/gpio.h:
-E:/___STUDIA/__________AKTUALNE/SM/Projekt/ws/01_STM/Components/Inc/AS5600.h:
-E:/___STUDIA/__________AKTUALNE/SM/Projekt/ws/01_STM/Components/Inc/interrupts.h:
-E:/___STUDIA/__________AKTUALNE/SM/Projekt/ws/01_STM/Components/Inc/AS5600.h:
+C:/Users/Kurus/Documents/github\ z\ krasa/inverted-pendulum/01_STM/Components/Inc/AS5600.h:
+C:/Users/Kurus/Documents/github\ z\ krasa/inverted-pendulum/01_STM/Components/Inc/interrupts.h:
+C:/Users/Kurus/Documents/github\ z\ krasa/inverted-pendulum/01_STM/Components/Inc/AS5600.h:
+../Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Include/arm_math.h:
+../Drivers/CMSIS/Include/cmsis_compiler.h:

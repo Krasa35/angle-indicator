@@ -1,0 +1,171 @@
+!SESSION 2024-01-13 15:40:37.132 -----------------------------------------------
+eclipse.buildId=Version 1.13.2
+java.version=17.0.6
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=pl_PL
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -data C:\Users\Kurus\Documents\github z krasa\inverted-pendulum
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2024-01-13 15:41:08.476
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2024-01-13 15:41:08.593
+!MESSAGE Log4j2 initialized with config file C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2024-01-13 15:41:17.141
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.core.resources 4 77 2024-01-13 15:42:00.141
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2024-01-13 15:42:00.141
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2024-01-13 15:42:00.141
+!MESSAGE C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM overlaps the location of another project: '01_STM'
+
+!ENTRY com.st.stm32cube.common.projectcreation 4 0 2024-01-13 15:42:00.143
+!MESSAGE Project is null
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-01-13 15:42:07.046
+!MESSAGE Indexed '01_STM' (46 sources, 185 headers) in 15.9 sec: 24,323 declarations; 116,843 references; 7 unresolved inclusions; 202 syntax errors; 400 unresolved names (0.28%)
+!SESSION 2024-01-13 15:44:31.399 -----------------------------------------------
+eclipse.buildId=Version 1.13.2
+java.version=17.0.6
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=pl_PL
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2024-01-13 15:44:42.758
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2024-01-13 15:44:42.763
+!MESSAGE Log4j2 initialized with config file C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2024-01-13 15:44:55.884
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-01-13 15:45:56.001
+!MESSAGE Indexed '01_STM' (46 sources, 185 headers) in 17.1 sec: 24,323 declarations; 116,843 references; 7 unresolved inclusions; 202 syntax errors; 400 unresolved names (0.28%)
+
+!ENTRY org.eclipse.core.resources 4 77 2024-01-13 15:46:38.022
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2024-01-13 15:46:38.022
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2024-01-13 15:46:38.022
+!MESSAGE C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM overlaps the location of another project: '01_STM'
+
+!ENTRY com.st.stm32cube.common.projectcreation 4 0 2024-01-13 15:46:38.023
+!MESSAGE Project is null
+
+!ENTRY org.eclipse.core.resources 4 77 2024-01-13 15:46:39.476
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2024-01-13 15:46:39.476
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2024-01-13 15:46:39.476
+!MESSAGE C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM overlaps the location of another project: '01_STM'
+
+!ENTRY com.st.stm32cube.common.projectcreation 4 0 2024-01-13 15:46:39.477
+!MESSAGE Project is null
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 104 2024-01-13 15:46:56.459
+!MESSAGE Program file does not exist
+!STACK 0
+java.io.FileNotFoundException: C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\Debug\Projekt_stm.elf not found
+	at org.eclipse.cdt.dsf.gdb.launching.LaunchUtils.verifyProgramPath(LaunchUtils.java:130)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.checkBinaryDetails(GdbLaunchDelegate.java:330)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugSession(GdbLaunchDelegate.java:152)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugger(GdbLaunchDelegate.java:109)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launch(GdbLaunchDelegate.java:97)
+	at com.st.stm32cube.ide.mcu.debug.launch.DSFDelegate.launch(DSFDelegate.java:336)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:806)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:717)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1040)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$1.run(DebugUIPlugin.java:1243)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 104 2024-01-13 15:46:56.460
+!MESSAGE C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\Debug\Projekt_stm.elf not found
+!STACK 0
+java.io.FileNotFoundException: C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\Debug\Projekt_stm.elf not found
+	at org.eclipse.cdt.dsf.gdb.launching.LaunchUtils.verifyProgramPath(LaunchUtils.java:130)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.checkBinaryDetails(GdbLaunchDelegate.java:330)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugSession(GdbLaunchDelegate.java:152)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugger(GdbLaunchDelegate.java:109)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launch(GdbLaunchDelegate.java:97)
+	at com.st.stm32cube.ide.mcu.debug.launch.DSFDelegate.launch(DSFDelegate.java:336)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:806)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:717)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1040)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$1.run(DebugUIPlugin.java:1243)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.core.resources 4 77 2024-01-13 15:47:23.138
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2024-01-13 15:47:23.138
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2024-01-13 15:47:23.138
+!MESSAGE C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM overlaps the location of another project: '01_STM'
+
+!ENTRY com.st.stm32cube.common.projectcreation 4 0 2024-01-13 15:47:23.139
+!MESSAGE Project is null
+
+!ENTRY org.eclipse.core.resources 4 77 2024-01-13 15:47:23.674
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2024-01-13 15:47:23.674
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2024-01-13 15:47:23.674
+!MESSAGE C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM overlaps the location of another project: '01_STM'
+
+!ENTRY com.st.stm32cube.common.projectcreation 4 0 2024-01-13 15:47:23.675
+!MESSAGE Project is null
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 104 2024-01-13 15:47:25.954
+!MESSAGE Program file does not exist
+!STACK 0
+java.io.FileNotFoundException: C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\Debug\Projekt_stm.elf not found
+	at org.eclipse.cdt.dsf.gdb.launching.LaunchUtils.verifyProgramPath(LaunchUtils.java:130)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.checkBinaryDetails(GdbLaunchDelegate.java:330)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugSession(GdbLaunchDelegate.java:152)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugger(GdbLaunchDelegate.java:109)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launch(GdbLaunchDelegate.java:97)
+	at com.st.stm32cube.ide.mcu.debug.launch.DSFDelegate.launch(DSFDelegate.java:336)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:806)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:717)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1040)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$1.run(DebugUIPlugin.java:1243)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 104 2024-01-13 15:47:25.955
+!MESSAGE C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\Debug\Projekt_stm.elf not found
+!STACK 0
+java.io.FileNotFoundException: C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\Debug\Projekt_stm.elf not found
+	at org.eclipse.cdt.dsf.gdb.launching.LaunchUtils.verifyProgramPath(LaunchUtils.java:130)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.checkBinaryDetails(GdbLaunchDelegate.java:330)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugSession(GdbLaunchDelegate.java:152)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugger(GdbLaunchDelegate.java:109)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launch(GdbLaunchDelegate.java:97)
+	at com.st.stm32cube.ide.mcu.debug.launch.DSFDelegate.launch(DSFDelegate.java:336)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:806)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:717)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1040)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$1.run(DebugUIPlugin.java:1243)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.core.resources 4 77 2024-01-13 15:48:33.732
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2024-01-13 15:48:33.732
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2024-01-13 15:48:33.732
+!MESSAGE C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM overlaps the location of another project: '01_STM'
+
+!ENTRY com.st.stm32cube.common.projectcreation 4 0 2024-01-13 15:48:33.733
+!MESSAGE Project is null
+
+!ENTRY org.eclipse.core.resources 4 77 2024-01-13 15:48:34.114
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2024-01-13 15:48:34.114
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2024-01-13 15:48:34.114
+!MESSAGE C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM overlaps the location of another project: '01_STM'
+
+!ENTRY com.st.stm32cube.common.projectcreation 4 0 2024-01-13 15:48:34.115
+!MESSAGE Project is null
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.swv 1 1 2024-01-13 15:48:42.428
+!MESSAGE SWV configuration; base: 36000000; minDiv: 18; maxDiv: 65535; maxSWO: 2000000; limit: 2000000 => SWO: 2000000; CPU: 72000000; div: 36

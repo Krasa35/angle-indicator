@@ -32,6 +32,7 @@
 #include "AS5600.h"
 #include <stdio.h>
 #include "interrupts.h"
+#include "arm_math.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -63,14 +64,7 @@ void SystemClock_Config(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-//void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
-//      float zmienna = AS5600_Angle(&device);
-//      char buffer[20];  // Adjust the size as needed
-//      int len = snprintf(buffer, sizeof(buffer), "%f", zmienna);
-//      buffer[len++] = '\r';
-//      buffer[len++] = '\n';
-//      HAL_UART_Transmit(&huart3, (uint8_t *)buffer, len, HAL_MAX_DELAY);
-//}
+
 /* USER CODE END 0 */
 
 /**
@@ -79,7 +73,6 @@ void SystemClock_Config(void);
   */
 int main(void)
 {
-
   /* USER CODE BEGIN 1 */
 
   /* USER CODE END 1 */
@@ -110,10 +103,16 @@ int main(void)
   MX_TIM9_Init();
   MX_SPI1_Init();
   MX_FATFS_Init();
+  MX_TIM4_Init();
   /* USER CODE BEGIN 2 */
   HAL_UART_Init(&huart3);
   AS5600_Init(&device);
   HAL_TIM_Base_Start_IT(&htim3);
+  HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_1);
+  HAL_GPIO_WritePin(Dir_GPIO_Port, Dir_Pin, GPIO_PIN_SET);
+  float32_t a[] = {1.0,1.0};
+  float32_t a_amp = 0;
+  arm_cmplx_mag_f32(a, &a_amp, 1);
   /* USER CODE END 2 */
 
   /* Infinite loop */

@@ -14,5 +14,6 @@ Project orginally intended to be regulation system for inverted pendulum but aft
 - 2024-01-12 -- 0.0.1
 
   - First STM32 project f7
-
-    ![alt](out\99_Docs\10_UML\test\test.png)
+    |![alt](out/99_Docs/10_UML/graph1/graph1.png)|![alt](out/99_Docs/10_UML/graph2/graph2.png)|
+    |:|:|
+    

@@ -1,0 +1,54 @@
+@startuml
+' This plugin integrates all type diagram snippets. They are splitted into 9 sections:
+component [Encoder\n\nOUT:\nangle:\tuint16_t\nIN:\nCommand:\tuint8_t]{
+    portout SDA_1
+    portout SCL_1
+} 
+
+component STM32{
+    portin SDA
+    portin SCL
+    portin Rx
+    portin Tx
+}
+
+component [PC\n\nIN:\nangle\tfloat]{
+    portout Rx_1
+    portout Tx_1
+}
+
+' component Motor_driver{
+'     Enable: 1
+'     Clk: Step
+'     Cw: direction
+' }
+
+' component Motor{
+
+' }
+
+' ' component MATLAB_APP{
+
+' ' }
+
+' component MATLAB_SCRIPT{
+'     Velocity: To_Send2Motor
+'     Logs: To_SDCard
+' }
+
+' SDA <--> Enkoder
+' SCL <--> Enkoder
+' Rx  <-->  PC
+' Tx  <-->  PC
+SDA_1  <-->   SDA
+SCL_1 "I2C" <-->   SCL
+Tx_1       <-->   Rx 
+Rx_1   "USART"    <-->   Tx 
+' STM32 --> MATLAB_SCRIPT
+' ' MATLAB_APP "zadana wartosc"--> MATLAB_SCRIPT
+' MATLAB_SCRIPT "syg sterujacy - predkosc" --> STM32
+' STM32 "Freq, VIN, GND" --> Motor_driver
+' Motor_driver --> Motor
+' Motor --> Enkoder
+' STM32 "USART" --> Terminal
+@enduml

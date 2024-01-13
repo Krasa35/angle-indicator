@@ -39,34 +39,34 @@ $(wildcard ../makefile.init) \
 $(wildcard ../makefile.targets) \
 
 
-BUILD_ARTIFACT_NAME := Projekt_stm
+BUILD_ARTIFACT_NAME := 01_STM
 BUILD_ARTIFACT_EXTENSION := elf
 BUILD_ARTIFACT_PREFIX :=
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-Projekt_stm.elf \
+01_STM.elf \
 
 MAP_FILES += \
-Projekt_stm.map \
+01_STM.map \
 
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
-Projekt_stm.list \
+01_STM.list \
 
 
 # All Target
 all: main-build
 
 # Main-build Target
-main-build: Projekt_stm.elf secondary-outputs
+main-build: 01_STM.elf secondary-outputs
 
 # Tool invocations
-Projekt_stm.elf Projekt_stm.map: $(OBJS) $(USER_OBJS) E:\___STUDIA\__________AKTUALNE\SM\Projekt\ws\01_STM\STM32F746ZGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "Projekt_stm.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"E:\___STUDIA\__________AKTUALNE\SM\Projekt\ws\01_STM\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Projekt_stm.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+01_STM.elf 01_STM.map: $(OBJS) $(USER_OBJS) C:\Users\Kurus\Documents\github\ z\ krasa\inverted-pendulum\01_STM\STM32F746ZGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "01_STM.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="01_STM.map" -Wl,--gc-sections -static -L"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\Lib\CMSIS_ARM" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -75,14 +75,14 @@ default.size.stdout: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-Projekt_stm.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "Projekt_stm.list"
+01_STM.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "01_STM.list"
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) Projekt_stm.elf Projekt_stm.list Projekt_stm.map default.size.stdout
+	-$(RM) 01_STM.elf 01_STM.list 01_STM.map default.size.stdout
 	-@echo ' '
 
 secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST)
