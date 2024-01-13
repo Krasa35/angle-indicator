@@ -14,6 +14,5 @@ const MenuStrings menuStrings = {
 };
 
 _BUFFER_UARThandle hbfr = {
-		._MAX_BUFFER_SIZE_  = MAX_BUFFER_SIZE,	//handle buffer
-		.state = 0
+		.state = 9
 };

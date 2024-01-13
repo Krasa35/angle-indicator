@@ -10,11 +10,10 @@
 **/
 #include "interrupts.h"
 
-#define MAX_BUFFER_SIZE 64
-
 
 extern struct AS5600 device;
 extern _BUFFER_UARThandle hbfr;
+
 
 // Initialize constant strings
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
@@ -51,7 +50,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 	    {
 		    // Continue receiving characters
 	    	hbfr.rxIndex++;
-	      if (hbfr.rxIndex < hbfr._MAX_BUFFER_SIZE_ - 1)
+	      if (hbfr.rxIndex < MAX_BUFFER_SIZE - 1)
 	      {
 	        HAL_UART_Receive_IT(&huart3, (uint8_t *)&hbfr.rxBuffer[hbfr.rxIndex], 1);
 	      }

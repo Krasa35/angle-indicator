@@ -18,19 +18,19 @@ void send_uart (const char* string)
 Menu_States processCommand(char *command)
 {
 	  Menu_States val;
-	  if (strcmp(command, "DEBUG") == 0)
+	  if (strcmp(command, menuStrings._DEBUG) == 0)
 	  {
 		// Handle Option 1
 		send_uart(menuStrings._DEBUG);
 		val = _DEBUG;
 	  }
-	  else if (strcmp(command, "REMOTE") == 0)
+	  else if (strcmp(command, menuStrings._REMOTE) == 0)
 	  {
 		// Handle Option 2
 		send_uart(menuStrings._REMOTE);
 		val = _REMOTE;
 	  }
-	  else if (strcmp(command, "MANUAL") == 0)
+	  else if (strcmp(command, menuStrings._MANUAL) == 0)
 	  {
 		// Handle Option 3
 		send_uart(menuStrings._MANUAL);

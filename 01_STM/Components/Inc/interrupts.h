@@ -12,20 +12,7 @@
 #ifndef INC_INTERRUPTS_H_
 #define INC_INTERRUPTS_H_
 
-#include "main.h"
-#include "eth.h"
-#include "fatfs.h"
-#include "i2c.h"
-#include "spi.h"
-#include "tim.h"
-#include "usart.h"
-#include "usb_otg.h"
-#include "gpio.h"
 
-#include "AS5600.h"
-#include <stdio.h>
-
-#include <string.h>
 #include "miscellaneous.h"
 #include "init.h"
 

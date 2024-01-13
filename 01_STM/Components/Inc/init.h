@@ -23,16 +23,13 @@
 #include "init.h"
 #include <string.h>
 
-#define MAX_STRING_LENGTH 	255
 #define MAX_BUFFER_SIZE 	64
-#define TRUE				1
-#define FALSE				0
 
 typedef enum {
 	_DEBUG 	= 	0,       	// Operation successful
 	_REMOTE = 	1,    		// General error
 	_MANUAL = 	2,     		// Device is busy
-	_IDLE	=	4
+	_IDLE	=	9
 } Menu_States;
 
 typedef struct {
@@ -42,10 +39,8 @@ typedef struct {
 } MenuStrings;
 
 typedef struct {
-  MenuStrings menu;
   char rxBuffer[MAX_BUFFER_SIZE];
   uint8_t rxIndex;
-  uint8_t _MAX_BUFFER_SIZE_;
   Menu_States state;
 } _BUFFER_UARThandle;
 
