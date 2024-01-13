@@ -65,8 +65,8 @@ all: main-build
 main-build: 01_STM.elf secondary-outputs
 
 # Tool invocations
-01_STM.elf 01_STM.map: $(OBJS) $(USER_OBJS) C:\Users\Kurus\Documents\github\ z\ krasa\inverted-pendulum\01_STM\STM32F746ZGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "01_STM.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="01_STM.map" -Wl,--gc-sections -static -L"C:\Users\Kurus\Documents\github z krasa\inverted-pendulum\01_STM\Lib\CMSIS_ARM" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+01_STM.elf 01_STM.map: $(OBJS) $(USER_OBJS) E:\___STUDIA\__________AKTUALNE\SM\Projekt\ws\01_STM\STM32F746ZGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "01_STM.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"E:\___STUDIA\__________AKTUALNE\SM\Projekt\ws\01_STM\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="01_STM.map" -Wl,--gc-sections -static -L"E:\___STUDIA\__________AKTUALNE\SM\Projekt\ws\01_STM\Lib\CMSIS_ARM" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

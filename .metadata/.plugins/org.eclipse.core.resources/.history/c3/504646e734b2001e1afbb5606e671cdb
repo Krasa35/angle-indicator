@@ -1,0 +1,44 @@
+/**
+  ******************************************************************************
+  * @file		: interrupts.c
+  * @author  	: KKI		kacper.krasin35@gmail.com
+  * @version 	: 0.0.1
+  * @date    	: Jan 12, 2024
+  * @brief   	: Brief of source file
+  *
+  ******************************************************************************
+**/
+#include "interrupts.h"
+
+extern struct AS5600 device;
+extern uint8_t* msg;
+struct BufferUART buffer;
+
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
+	if (htim->Instance == TIM3) {
+	  float zmienna = AS5600_Angle(&device);
+	  char buffer[20];  // Adjust the size as needed
+	  int len = snprintf(buffer, sizeof(buffer), "%f", zmienna);
+	  buffer[len++] = '\r';
+	  buffer[len++] = '\n';
+	  //HAL_UART_Transmit(&huart3, (uint8_t *)buffer, len, 100);
+	}
+}
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
+{
+	if (huart == &huart3)
+	{
+		sscanf(&msg, " %c", &buffer.b);
+		if(b != ';'){
+			buffer.receivedBuffer[buffer.bufferIndex++] = buffer.b;
+		}
+		else{
+			HAL_UART_Transmit_IT(&huart3, buffer.receivedBuffer, buffer.bufferIndex);
+			for (int i = 0; i < buffer.bufferIndex; i++){
+				buffer.receivedBuffer[buffer.bufferIndex] = '\000';
+			}
+			bufferIndex = 0;
+		}
+		HAL_UART_Receive_IT(&huart3, (uint8_t*)&msg, 1);
+	}
+}
