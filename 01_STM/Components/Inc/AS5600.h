@@ -49,7 +49,7 @@ typedef struct{
     float 	   angle;
 } _AS5600_handle;
 
-void AS5600_Angle(_AS5600_handle* encoder);
-void AS5600_Magnes_Distance(_AS5600_handle* encoder);
+HAL_StatusTypeDef AS5600_Angle(_AS5600_handle* encoder);
+HAL_StatusTypeDef AS5600_Magnes_Distance(_AS5600_handle* encoder);
 
 #endif /* INC_AS5600_H_ */

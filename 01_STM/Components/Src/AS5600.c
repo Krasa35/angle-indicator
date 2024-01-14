@@ -30,14 +30,17 @@ _AS5600_handle henc = {
 	.magnes_distance = 0
 };
 
-void AS5600_Angle(_AS5600_handle* encoder)
+HAL_StatusTypeDef AS5600_Angle(_AS5600_handle* encoder)
 {
     uint16_t buffer;
-    HAL_I2C_Mem_Read(&hi2c1, encoder->ADDRESS << 1, encoder->ANGLE1, 1, (uint8_t*)&buffer, 2, AS5600_MAX_DELAY);
+    HAL_StatusTypeDef state = HAL_I2C_Mem_Read(&hi2c1, encoder->ADDRESS << 1, encoder->ANGLE1, 1, (uint8_t*)&buffer, 2, AS5600_MAX_DELAY);
     buffer = (buffer >> 8) | (buffer << 8); // zamiana bitow LH
     encoder->angle = buffer / 11.38;
+    HAL_StatusTypeDef state = HAL_OK;
+    return state;
 }
 
-void AS5600_Magnes_Distance(_AS5600_handle* encoder){
-    HAL_I2C_Mem_Read(&hi2c1, encoder->ADDRESS << 1, encoder->STATUS, 1, (uint8_t*)&encoder->magnes_distance, 1, AS5600_MAX_DELAY);
+HAL_StatusTypeDef AS5600_Magnes_Distance(_AS5600_handle* encoder){
+	HAL_StatusTypeDef state = HAL_I2C_Mem_Read(&hi2c1, encoder->ADDRESS << 1, encoder->STATUS, 1, (uint8_t*)&encoder->magnes_distance, 1, AS5600_MAX_DELAY);
+	return state;
 }

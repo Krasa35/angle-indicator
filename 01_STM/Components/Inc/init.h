@@ -18,6 +18,9 @@
 #include "usb_otg.h"
 #include "gpio.h"
 
+#include <stdlib.h>
+#include <assert.h>
+
 #include "arm_math.h"
 #include <stdio.h>
 

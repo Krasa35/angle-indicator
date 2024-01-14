@@ -11,17 +11,24 @@
 #include "interrupts.h"
 
 extern _AS5600_handle henc;
-
 extern _PULSER_handle hpsr;
 extern _BUFFER_UARThandle hbfr;
 extern _BUFFER_UARThandle hbfr2;
+extern _PID_handle hpid;
+_PID_handle pid_temp = {
+		.controller.Kp = 1.0f,
+		.controller.Ki = 0.2f,
+		.controller.Kd = 0.1f
+};
 
 // Initialize constant strings
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
 	if (htim->Instance == TIM3)
 	{
-		AS5600_Angle(&henc);
+	    if(AS5600_Angle(&henc) != HAL_OK){
+	        _Error_Handler(__FILE__, __LINE__);
+	    }
 		if (hbfr.state == _DEBUG)
 		{
 			snprintf(hbfr2.rxBuffer, sizeof(hbfr2.rxBuffer), "Current value read from encoder: %f \r\n", henc.angle);
@@ -37,6 +44,15 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 			{
 				HAL_GPIO_WritePin(Dir_GPIO_Port, Dir_Pin, GPIO_PIN_RESET);
 			}
+		}
+		if (hbfr.state == _REMOTE)
+		{
+			PID_update(&hpid, &pid_temp);
+			float32_t error = hpid.setpoint - henc.angle;
+			arm_pid_init_f32(&hpid.controller, 1);
+			float32_t output = arm_pid_f32(&hpid.controller, error);
+			float32_t diff = output - hpid.output;
+			hpid.output = output;
 		}
 	}
 }
@@ -82,6 +98,11 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 		if (hbfr.state == _DEBUG)
 		{
 			HAL_GPIO_WritePin(Enable_GPIO_Port, Enable_Pin, GPIO_PIN_RESET);
+		}
+		if (hbfr.state == _REMOTE)
+		{
+			pid_temp.setpoint = hpsr.set_angle;
+			pid_temp.current_angle = henc.angle;
 		}
 	}
 }

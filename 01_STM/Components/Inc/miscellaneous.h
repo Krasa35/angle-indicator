@@ -13,6 +13,6 @@
 
 void send_uart (const char* string);
 Menu_States processCommand(char *command);
-
+HAL_StatusTypeDef isStructContainsNAN(const void* structure, size_t size);
 
 #endif /* INC_MISCELLANEOUS_H_ */

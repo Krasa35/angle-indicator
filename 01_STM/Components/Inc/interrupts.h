@@ -19,6 +19,7 @@
 #include "motor.h"
 #include "lcd.h"
 #include "AS5600.h"
+#include "pid.h"
 
 #endif /* INC_INTERRUPTS_H_ */
 

@@ -45,3 +45,29 @@ Menu_States processCommand(char *command)
 	  }
   return val;
 }
+
+HAL_StatusTypeDef isStructContainsNAN(const void* structure, size_t size) {
+    const uint8_t* ptr = (const uint8_t*)structure;
+    const uint8_t* end = ptr + size;
+
+    // Check for NaN in the binary representation of each float member
+    while (ptr < end) {
+        if (*ptr == 0xFF && *(ptr + 1) == 0xFF && *(ptr + 2) == 0xFF && *(ptr + 3) == 0xFF) {
+            return HAL_ERROR;  // NaN found
+        }
+        ptr += sizeof(float);
+    }
+
+    return HAL_OK;  // No NaN found
+}
+
+void _Error_Handler(char *file, int line) {
+    /* Your error handling code goes here */
+    char errorMessage[100];  // Adjust the size based on your needs
+
+    /* Format error message with file and line information */
+    snprintf(errorMessage, sizeof(errorMessage), "Error in file %s at line %d\n", file, line);
+
+    send_uart(errorMessage);
+
+}
