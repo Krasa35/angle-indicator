@@ -12,6 +12,7 @@
 
 extern struct AS5600 device;
 extern float32_t set_angle;
+extern float actual_angle;
 
 extern _BUFFER_UARThandle hbfr;
 
@@ -20,14 +21,25 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
 	if (htim->Instance == TIM3)
 	{
-		float zmienna = AS5600_Angle(&device);
+		actual_angle = AS5600_Angle(&device);
 		if (hbfr.state == _DEBUG)
 		{
 			char buffer[20]; // Adjust the size as needed
-			int len = snprintf(buffer, sizeof(buffer), "%f", zmienna);
+			int len = snprintf(buffer, sizeof(buffer), "%f", actual_angle);
 			buffer[len++] = '\r';
 			buffer[len++] = '\n';
 			HAL_UART_Transmit(&huart3, (uint8_t *)buffer, len, 100);
+		}
+		if (hbfr.state == _DEBUG)
+		{
+			if ((set_angle-10)<actual_angle)
+			{
+				HAL_GPIO_WritePin(Dir_GPIO_Port, Dir_Pin, GPIO_PIN_SET);
+			}
+			if ((set_angle+10)>actual_angle)
+			{
+				HAL_GPIO_WritePin(Dir_GPIO_Port, Dir_Pin, GPIO_PIN_RESET);
+			}
 		}
 	}
 }
@@ -70,6 +82,11 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
 	if (GPIO_Pin == USER_Btn_Pin)
 	{
+		if (hbfr.state == _DEBUG)
+		{
+			HAL_GPIO_WritePin(Enable_GPIO_Port, Enable_Pin, GPIO_PIN_RESET);
+
+		}
 	}
 }
 void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
