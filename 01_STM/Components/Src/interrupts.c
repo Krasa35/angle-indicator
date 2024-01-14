@@ -11,23 +11,25 @@
 #include "interrupts.h"
 
 extern struct AS5600 device;
-extern float32_t set_angle;
 
+extern _PULSER_handle hpsr;
 extern _BUFFER_UARThandle hbfr;
+extern _TIMER_IThandle htit;
 
 // Initialize constant strings
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
 	if (htim->Instance == TIM3)
 	{
-		float zmienna = AS5600_Angle(&device);
+		#ifdef ENCODER
+		htit.current_angle = AS5600_Angle(&device);
+		#else
+		htit.current_angle = 0.0;
+		#endif
 		if (hbfr.state == _DEBUG)
 		{
-			char buffer[20]; // Adjust the size as needed
-			int len = snprintf(buffer, sizeof(buffer), "%f", zmienna);
-			buffer[len++] = '\r';
-			buffer[len++] = '\n';
-			HAL_UART_Transmit(&huart3, (uint8_t *)buffer, len, 100);
+			snprintf(htit.buffer, sizeof(htit.buffer), "Current value read from encoder: %f \r\n", htit.current_angle);
+			send_uart(htit.buffer);
 		}
 	}
 }
@@ -70,10 +72,11 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
 	if (GPIO_Pin == USER_Btn_Pin)
 	{
+
 	}
 }
 void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
 {
-	float32_t angle_overflow = ((int16_t)__HAL_TIM_GET_COUNTER(htim) * 45) / 10;
-	set_angle = (angle_overflow < 0) ? (fmod(angle_overflow, 360.0) + 360.0) : (fmod(angle_overflow, 360.0));
+	hpsr.angle_overflow = ((int16_t)__HAL_TIM_GET_COUNTER(htim) * 45) / 10;
+	hpsr.set_angle = (hpsr.angle_overflow < 0) ? (fmod(hpsr.angle_overflow, 360.0) + 360.0) : (fmod(hpsr.angle_overflow, 360.0));
 }
