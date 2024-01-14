@@ -12,6 +12,7 @@
 
 extern _AS5600_handle henc;
 
+extern _MOTOR_handle hmtr;
 extern _PULSER_handle hpsr;
 extern _BUFFER_UARThandle hbfr;
 extern _BUFFER_UARThandle hbfr2;
@@ -45,33 +46,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
 	if (huart == &huart3)
 	{
-		if (hbfr.rxBuffer[hbfr.rxIndex] == '\n' || hbfr.rxBuffer[hbfr.rxIndex] == '\r')
-		{
-			// End of command received
-			hbfr.rxBuffer[hbfr.rxIndex] = '\0'; // Null-terminate the string
-			hbfr.state = processCommand(hbfr.rxBuffer);
-
-			// Reset buffer index for the next command
-			hbfr.rxIndex = 0;
-
-			// Restart UART reception
-			HAL_UART_Receive_IT(&huart3, (uint8_t *)hbfr.rxBuffer, 1);
-		}
-		else
-		{
-			// Continue receiving characters
-			hbfr.rxIndex++;
-			if (hbfr.rxIndex < MAX_BUFFER_SIZE - 1)
-			{
-				HAL_UART_Receive_IT(&huart3, (uint8_t *)&hbfr.rxBuffer[hbfr.rxIndex], 1);
-			}
-			else
-			{
-				// Handle buffer overflow (optional)
-				hbfr.rxIndex = 0;
-				HAL_UART_Receive_IT(&huart3, (uint8_t *)hbfr.rxBuffer, 1);
-			}
-		}
+		BUFFER_Process();
 	}
 }
 
@@ -79,10 +54,9 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
 	if (GPIO_Pin == USER_Btn_Pin)
 	{
-		if (hbfr.state == _DEBUG)
-		{
-			HAL_GPIO_WritePin(Enable_GPIO_Port, Enable_Pin, GPIO_PIN_RESET);
-		}
+		char clearScreenSequence[] = "\x1B[2J";
+		HAL_UART_Transmit(&huart3, (uint8_t *)clearScreenSequence, strlen(clearScreenSequence), HAL_MAX_DELAY);
+
 	}
 }
 void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)

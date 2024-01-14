@@ -12,6 +12,8 @@
 #define MAX_BUFFER_SIZE 	64
 
 #include "init.h"
+#include "motor.h"
+#include "miscellaneous.h"
 
 typedef struct {
   char rxBuffer[MAX_BUFFER_SIZE];
@@ -20,5 +22,8 @@ typedef struct {
   MenuComs com;
   MenuStrings compStrings;
 } _BUFFER_UARThandle;
+
+HAL_StatusTypeDef BUFFER_Process();
+HAL_StatusTypeDef BUFFER_State_Inits();
 
 #endif /* INC_MENU_UART_H_ */
