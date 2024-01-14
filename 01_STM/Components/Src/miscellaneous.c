@@ -7,7 +7,7 @@
 
 #include "miscellaneous.h"
 
-extern const MenuStrings menuStrings;
+extern _BUFFER_UARThandle hbfr;
 
 void send_uart (const char* string)
 {
@@ -18,28 +18,29 @@ void send_uart (const char* string)
 Menu_States processCommand(char *command)
 {
 	  Menu_States val;
-	  if (strcmp(command, menuStrings._DEBUG) == 0)
+	  if (strcmp(command, hbfr.compStrings._DEBUG) == 0)
 	  {
 		// Handle Option 1
-		send_uart(menuStrings._DEBUG);
+		send_uart(hbfr.com._DEBUG);
 		val = _DEBUG;
 	  }
-	  else if (strcmp(command, menuStrings._REMOTE) == 0)
+	  else if (strcmp(command, hbfr.compStrings._REMOTE) == 0)
 	  {
 		// Handle Option 2
-		send_uart(menuStrings._REMOTE);
+		send_uart(hbfr.com._REMOTE);
 		val = _REMOTE;
 	  }
-	  else if (strcmp(command, menuStrings._MANUAL) == 0)
+	  else if (strcmp(command, hbfr.compStrings._MANUAL) == 0)
 	  {
 		// Handle Option 3
-		send_uart(menuStrings._MANUAL);
+		send_uart(hbfr.com._MANUAL);
 		val = _MANUAL;
 	  }
 	  else
 	  {
 		// Invalid command
 		send_uart("Invalid command\r\n");
+		send_uart(hbfr.com._IDLE);
 		val = _IDLE;
 	  }
   return val;

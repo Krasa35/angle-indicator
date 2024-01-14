@@ -14,7 +14,6 @@
 
 #include "miscellaneous.h"
 #include "init.h"
-#include "arm_math.h"
 
 #endif /* INC_INTERRUPTS_H_ */
 
