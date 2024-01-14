@@ -10,34 +10,30 @@
  **/
 #include "interrupts.h"
 
-extern struct AS5600 device;
+extern _AS5600_handle henc;
 
 extern _PULSER_handle hpsr;
 extern _BUFFER_UARThandle hbfr;
-extern _TIMER_IThandle htit;
+extern _BUFFER_UARThandle hbfr2;
 
 // Initialize constant strings
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
 	if (htim->Instance == TIM3)
 	{
-#ifdef ENCODER
-		htit.current_angle = AS5600_Angle(&device);
-#else
-		htit.current_angle = 0.0;
-#endif
+		AS5600_Angle(&henc);
 		if (hbfr.state == _DEBUG)
 		{
-			snprintf(htit.buffer, sizeof(htit.buffer), "Current value read from encoder: %f \r\n", htit.current_angle);
-			send_uart(htit.buffer);
+			snprintf(hbfr2.rxBuffer, sizeof(hbfr2.rxBuffer), "Current value read from encoder: %f \r\n", henc.angle);
+			send_uart(hbfr2.rxBuffer);
 		}
 		if (hbfr.state == _DEBUG)
 		{
-			if ((hpsr.set_angle - 10) < htit.current_angle)
+			if ((hpsr.set_angle - 10) < henc.angle)
 			{
 				HAL_GPIO_WritePin(Dir_GPIO_Port, Dir_Pin, GPIO_PIN_SET);
 			}
-			if ((hpsr.set_angle + 10) > htit.current_angle)
+			if ((hpsr.set_angle + 10) > henc.angle)
 			{
 				HAL_GPIO_WritePin(Dir_GPIO_Port, Dir_Pin, GPIO_PIN_RESET);
 			}

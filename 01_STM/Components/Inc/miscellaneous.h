@@ -9,6 +9,7 @@
 #define INC_MISCELLANEOUS_H_
 
 #include "init.h"
+#include "menu_UART.h"
 
 void send_uart (const char* string);
 Menu_States processCommand(char *command);

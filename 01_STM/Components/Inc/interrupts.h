@@ -14,6 +14,11 @@
 
 #include "miscellaneous.h"
 #include "init.h"
+#include "menu_UART.h"
+#include "rotpulser.h"
+#include "motor.h"
+#include "lcd.h"
+#include "AS5600.h"
 
 #endif /* INC_INTERRUPTS_H_ */
 

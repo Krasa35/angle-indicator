@@ -7,37 +7,37 @@
 
 #include "AS5600.h"
 
-void AS5600_Init(struct AS5600* device){
-    device->ADDRESS = _AS5600_ADDRESS;
-    device->ZMCO = 0;
-    device->ZPOS1 = 0;
-    device->ZPOS2 = 0;
-    device->MPOS1 = 0;
-    device->MPOS2 = 0;
-    device->MANG1 = 0;
-    device->MANG2 = 0;
-    device->CONF1 = 0;
-    device->CONF2 = 0;
-    device->RAW_ANGLE1 = 0;
-    device->RAW_ANGLE2 = 0;
-    device->ANGLE1 = _ANGLE;
-    device->ANGLE2 = 0;
-    device->STATUS = _STATUS;
-    device->AGC = 0;
-    device->MAGNITUDE1 = 0;
-    device->MAGNITUDE2 = 0;
-}
-float AS5600_Angle(struct AS5600* device)
+_AS5600_handle henc = {
+    .ADDRESS = _AS5600_ADDRESS,
+    .ZMCO = 0,
+    .ZPOS1 = 0,
+    .ZPOS2 = 0,
+    .MPOS1 = 0,
+    .MPOS2 = 0,
+    .MANG1 = 0,
+    .MANG2 = 0,
+    .CONF1 = 0,
+    .CONF2 = 0,
+    .RAW_ANGLE1 = 0,
+    .RAW_ANGLE2 = 0,
+    .ANGLE1 = _ANGLE,
+    .ANGLE2 = 0,
+    .STATUS = _STATUS,
+    .AGC = 0,
+    .MAGNITUDE1 = 0,
+    .MAGNITUDE2 = 0,
+	.angle = 0.0,
+	.magnes_distance = 0
+};
+
+void AS5600_Angle(_AS5600_handle* encoder)
 {
-    uint16_t angle;
-    HAL_I2C_Mem_Read(&hi2c1, device->ADDRESS << 1, device->ANGLE1, 1, (uint8_t*)&angle, 2, HAL_MAX_DELAY);
-    angle = (angle >> 8) | (angle << 8); // zamiana bitow LH
-    float angle_float = angle / 11.38;
-    return angle_float;
+    uint16_t buffer;
+    HAL_I2C_Mem_Read(&hi2c1, encoder->ADDRESS << 1, encoder->ANGLE1, 1, (uint8_t*)&buffer, 2, AS5600_MAX_DELAY);
+    buffer = (buffer >> 8) | (buffer << 8); // zamiana bitow LH
+    encoder->angle = buffer / 11.38;
 }
-int AS5600_Magnes_Distance(struct AS5600* device)
-{
-    uint8_t magnes_distance;
-    HAL_I2C_Mem_Read(&hi2c1, device->ADDRESS << 1, device->STATUS, 1, (uint8_t*)&magnes_distance, 1, HAL_MAX_DELAY);
-    return magnes_distance;
+
+void AS5600_Magnes_Distance(_AS5600_handle* encoder){
+    HAL_I2C_Mem_Read(&hi2c1, encoder->ADDRESS << 1, encoder->STATUS, 1, (uint8_t*)&encoder->magnes_distance, 1, AS5600_MAX_DELAY);
 }

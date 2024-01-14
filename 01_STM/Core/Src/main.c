@@ -17,6 +17,7 @@
  */
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
+#include <OLD_AS5600.h>
 #include "main.h"
 #include "eth.h"
 #include "fatfs.h"
@@ -29,7 +30,6 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "AS5600.h"
 #include <stdio.h>
 #include "interrupts.h"
 /* USER CODE END Includes */
@@ -52,9 +52,8 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-struct AS5600 device;
-float32_t set_angle;
-float actual_angle;
+//float32_t set_angle;
+//float actual_angle;
 extern _BUFFER_UARThandle hbfr;
 /* USER CODE END PV */
 
@@ -109,7 +108,6 @@ int main(void)
   /* USER CODE BEGIN 2 */
   HAL_TIM_Encoder_Start_IT(&htim1, TIM_CHANNEL_ALL);
   HAL_UART_Receive_IT(&huart3, (uint8_t *)&hbfr.rxBuffer[hbfr.rxIndex], 1);
-  AS5600_Init(&device);
   HAL_TIM_Base_Start_IT(&htim3);
   HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_1);
   HAL_GPIO_WritePin(Dir_GPIO_Port, Dir_Pin, GPIO_PIN_SET);

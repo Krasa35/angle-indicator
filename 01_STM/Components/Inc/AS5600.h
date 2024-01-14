@@ -1,8 +1,8 @@
 /*
  * AS5600.h
  *
- *  Created on: Jan 12, 2024
- *      Author: Kurus
+ *  Created on: Jan 14, 2024
+ *      Author: kacpe
  */
 
 #ifndef INC_AS5600_H_
@@ -24,10 +24,10 @@
 #define _STATUS 0x0B
 #define _AGC 0x1A
 #define _MAGNITUDE 0x01B
-//config
+#define AS5600_MAX_DELAY 200
 
-struct AS5600 {
-    uint8_t ADDRESS;
+typedef struct{
+    uint8_t    ADDRESS;
     uint8_t    ZMCO;
     uint8_t    ZPOS1;
     uint8_t    ZPOS2;
@@ -45,10 +45,11 @@ struct AS5600 {
     uint8_t    AGC;
     uint8_t    MAGNITUDE1;
     uint8_t    MAGNITUDE2;
-};
+    uint8_t    magnes_distance;
+    float 	   angle;
+} _AS5600_handle;
 
-void AS5600_Init(struct AS5600* device);
-float AS5600_Angle(struct AS5600* device);
-int AS5600_Magnes_Distance(struct AS5600* device);
+void AS5600_Angle(_AS5600_handle* encoder);
+void AS5600_Magnes_Distance(_AS5600_handle* encoder);
 
 #endif /* INC_AS5600_H_ */
