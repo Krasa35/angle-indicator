@@ -10,9 +10,11 @@
 
 #include "init.h"
 #include "menu_UART.h"
+#include "motor.h"
 
 void send_uart (const char* string);
 Menu_States processCommand(char *command);
 HAL_StatusTypeDef isStructContainsNAN(const void* structure, size_t size);
+void _Error_Handler(char *file, int line);
 
 #endif /* INC_MISCELLANEOUS_H_ */

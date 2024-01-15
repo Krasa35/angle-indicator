@@ -11,14 +11,15 @@
 #include "arm_math.h"
 #include "AS5600.h"
 #include "miscellaneous.h"
+#include "motor.h"
 
 #define MAX_BUFFER_SIZE 	64
 
 typedef struct {
     arm_pid_instance_f32 controller;
     float setpoint;
-    float integral;
     float lastError;
+    float lastOutput;
     float output;
     float current_angle;
 } _PID_handle;
@@ -26,5 +27,6 @@ typedef struct {
 HAL_StatusTypeDef PID_check(_PID_handle* pid);
 HAL_StatusTypeDef PID_Step(_PID_handle* pid, char* errorMessage);
 HAL_StatusTypeDef PID_update(_PID_handle* pid, const _PID_handle* pid_new);
+HAL_StatusTypeDef PID_manualProcess(_PID_handle* pid, _MOTOR_handle* mtr);
 
 #endif /* INC_PID_H_ */

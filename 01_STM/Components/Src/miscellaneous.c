@@ -8,11 +8,13 @@
 #include "miscellaneous.h"
 
 extern _BUFFER_UARThandle hbfr;
+extern _MOTOR_handle hmtr;
 
 void send_uart (const char* string)
 {
 	uint8_t len = strlen(string);
-	HAL_UART_Transmit(&huart3, (uint8_t *)string, len, 2000);
+	//HAL_UART_Transmit_IT(&huart3, (uint8_t *)string, len);
+	HAL_UART_Transmit(&huart3, (uint8_t *)string, len, 200);
 }
 
 Menu_States processCommand(char *command)
@@ -23,25 +25,33 @@ Menu_States processCommand(char *command)
 		// Handle Option 1
 		send_uart(hbfr.com._DEBUG);
 		val = _DEBUG;
+		(MOTOR_SET_DISABLE(&hmtr) != HAL_OK) ? (_Error_Handler(__FILE__, __LINE__)): 1 ;
 	  }
 	  else if (strcmp(command, hbfr.compStrings._REMOTE) == 0)
 	  {
 		// Handle Option 2
 		send_uart(hbfr.com._REMOTE);
 		val = _REMOTE;
+		(MOTOR_SET_DISABLE(&hmtr) != HAL_OK) ? (_Error_Handler(__FILE__, __LINE__)): 1 ;
 	  }
 	  else if (strcmp(command, hbfr.compStrings._MANUAL) == 0)
 	  {
 		// Handle Option 3
 		send_uart(hbfr.com._MANUAL);
 		val = _MANUAL;
+		(MOTOR_SET_DISABLE(&hmtr) != HAL_OK) ? (_Error_Handler(__FILE__, __LINE__)): 1 ;
 	  }
-	  else
+	  else if (strcmp(command, hbfr.compStrings._IDLE) == 0)
 	  {
-		// Invalid command
-		send_uart("Invalid command\r\n");
 		send_uart(hbfr.com._IDLE);
 		val = _IDLE;
+		(MOTOR_SET_DISABLE(&hmtr) != HAL_OK) ? (_Error_Handler(__FILE__, __LINE__)): 1 ;
+	  }
+	  else {
+			// Invalid command
+			send_uart("Invalid command\r\n");
+			val = _IDLE;
+			(MOTOR_SET_DISABLE(&hmtr) != HAL_OK) ? (_Error_Handler(__FILE__, __LINE__)): 1 ;
 	  }
   return val;
 }

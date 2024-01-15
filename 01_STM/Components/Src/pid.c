@@ -11,11 +11,9 @@ _PID_handle hpid = {
 		.controller.Kp = NAN,
 		.controller.Ki = NAN,
 		.controller.Kd = NAN,
-		.integral = NAN,
 		.lastError = 0.0f,
 		.setpoint = NAN,
 		.output = 0.0f,
-		.current_angle = NAN
 };
 
 HAL_StatusTypeDef PID_check(_PID_handle* pid)
@@ -39,38 +37,23 @@ HAL_StatusTypeDef PID_update(_PID_handle* pid, const _PID_handle* pid_new) {
     pid->controller.Kp 		= pid_new->controller.Kp;
     pid->controller.Ki 		= pid_new->controller.Ki;
     pid->controller.Kd 		= pid_new->controller.Kd;
-	pid->integral   = pid_new->integral;
 	pid->setpoint   = pid_new->setpoint;
 	pid->current_angle = pid_new->current_angle;
 
     return HAL_OK;
 }
 
-//HAL_StatusTypeDef PID_Step(_PID_handle* pid, char* errorMessage) {
-//    if (pid == NULL) {
-//        if (errorMessage != NULL) {
-//            snprintf(errorMessage, MAX_BUFFER_SIZE, "Invalid pointers");
-//        }
-//        return HAL_ERROR;  // Invalid pointers, function failed
-//    }
-//    if (isStructContainsNAN(pid, sizeof(_PID_handle)))
-//    {
-//        if (errorMessage != NULL) {
-//            snprintf(errorMessage, MAX_BUFFER_SIZE, "One of parameters has not been set -> NAN error");
-//        }
-//        return HAL_ERROR;  // Invalid pointers, function failed
-//    }
-//
-//    float error = pid->setpoint - pid->current_angle;
-//    pid->integral += error;
-//    float derivative = error - pid->lastError;
-//
-//    pid->output = (pid->kp * error) + (pid->ki * pid->integral) + (pid->kd * derivative);
-//    pid->lastError = error;
-//
-//    if (errorMessage != NULL) {
-//        snprintf(errorMessage, MAX_BUFFER_SIZE, "No error");  // Provide a default message
-//    }
-//
-//    return HAL_OK;  // Function executed correctly
-//}
+HAL_StatusTypeDef PID_manualProcess(_PID_handle* pid, _MOTOR_handle* mtr){
+	float32_t error = pid->setpoint - pid->current_angle;
+	arm_pid_init_f32(&pid->controller, 1);
+	pid->output = arm_pid_f32(&pid->controller, error);
+	float32_t diff = (pid->output - pid->lastOutput)/0.001;
+	GPIO_PinState dir = (pid->output < 0) ? (GPIO_PIN_SET):(GPIO_PIN_RESET);
+	(MOTOR_Direction(mtr, dir) != HAL_OK) ? (_Error_Handler(__FILE__, __LINE__)): 1 ;
+	(MOTOR_FindFrequency(mtr, diff) != HAL_OK) ? (_Error_Handler(__FILE__, __LINE__)): 1 ;
+	pid->lastOutput= pid->output;
+	if (abs(error) < 5.0f){
+		(MOTOR_SET_DISABLE(mtr) != HAL_OK) ? (_Error_Handler(__FILE__, __LINE__)): 1 ;
+	}
+	return HAL_OK;
+}

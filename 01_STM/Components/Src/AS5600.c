@@ -36,7 +36,6 @@ HAL_StatusTypeDef AS5600_Angle(_AS5600_handle* encoder)
     HAL_StatusTypeDef state = HAL_I2C_Mem_Read(&hi2c1, encoder->ADDRESS << 1, encoder->ANGLE1, 1, (uint8_t*)&buffer, 2, AS5600_MAX_DELAY);
     buffer = (buffer >> 8) | (buffer << 8); // zamiana bitow LH
     encoder->angle = buffer / 11.38;
-    HAL_StatusTypeDef state = HAL_OK;
     return state;
 }
 

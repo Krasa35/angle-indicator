@@ -40,8 +40,20 @@ Project orginally intended to be regulation system for inverted pendulum but aft
   - Variables moved to structures
   - Added better looking MENU in terminal
 
+- 2024-01-5 -- 0.0.5 
+
+  - PID working on fixed gains
+  - Motor structure created
+  - Handling errors by HAL_OK
+  - Button needs to be pressed to power on the motor
+
 # TODO
-* START/STOP functions for motor
-* move variables to structures
-* PID
-* connect LCD
+- [x] START/STOP functions for motor
+- [x] move variables to structures
+- [x] PID
+- [ ] Let user write in parameters of PID via UART
+- [ ] Desktop APP in MATLAB
+- [ ] SD CARD reader for logs
+- [ ] CRC sum
+- [ ] Ethernet communication
+- [ ] connect LCD
