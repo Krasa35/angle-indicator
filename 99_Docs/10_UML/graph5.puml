@@ -1,0 +1,132 @@
+@startuml
+' This plugin integrates all type diagram snippets. They are splitted into 9 sections:
+component [Encoder\n\nOUT:\nangle:\tuint16_t\nIN:\nCommand:\tuint8_t]{
+    portin SDA_1
+    portin SCL_1
+} 
+
+component STM32{
+    portout SDA
+    portout SCL
+    portout CLK_STM1
+    portout DT_STM1
+    portout SW_STM1
+    portout 5V
+    portout GND_STM
+    portin 3_3V_STM
+    portin Rx
+    portin Tx
+    portin CLK_STM
+    portin CW_STM
+    portin EN_STM
+    portin CLK_SPI_STM
+    portin MISO_STM
+    portin MOSI_STM
+}
+
+component [PC\n\nIN:\nangle\tfloat]{
+    portout Rx_1
+    portout Tx_1
+}
+
+component [Motor\n\nIN:\n]{
+    portout Ap_M
+    portout Am_M
+    portout Bp_M
+    portout Bm_M
+}
+
+component [Motor\tdriver\n\nIN:\n]{
+    portin Ap_MD
+    portin Am_MD
+    portin Bp_MD
+    portin Bm_MD
+    portout CLK_MD
+    portout CW_MD
+    portout EN_MD
+    portout VIN_MD
+    portout GND_MD
+}
+
+component [Rotary\tPulser\n\n\tIN:\n]{
+    portin CLK_RP
+    portin DT_RP
+    portin SW_RP
+    portin VIN_RP
+    portin GND_RP
+}
+
+component [ACDC\tAdapter\n]{
+    portin 12V_A
+    portin GND_A
+}
+
+
+component [SD\tCARD\tReader]{
+    portout 5V_SD
+    portout GND_SD
+    portout 3_3V_SD
+    portout MOSI_SD
+    portout CS_SD
+    portout CLK_SD
+    portout MISO_SD
+    portout GND2_SD
+}
+
+' component Motor_driver{
+'     Enable: 1
+'     Clk: Step
+'     Cw: direction
+' }
+
+' component Motor{
+
+' }
+
+' ' component MATLAB_APP{
+
+' ' }
+
+' component MATLAB_SCRIPT{
+'     Velocity: To_Send2Motor
+'     Logs: To_SDCard
+' }
+
+' SDA <--> Enkoder
+' SCL <--> Enkoder
+' Rx  <-->  PC
+' Tx  <-->  PC
+Ap_M --> Ap_MD
+Am_M --> Am_MD
+Bp_M --> Bp_MD
+Bm_M --> Bm_MD
+CLK_MD --> CLK_STM
+CW_MD --> CW_STM
+EN_MD --> EN_STM
+5V_SD --> 5V
+GND_SD --> GND_STM
+MISO_SD --> MISO_STM
+MOSI_SD --> MOSI_STM
+CLK_SD --> CLK_SPI_STM
+CS_SD --> GND_STM
+GND2_SD --> GND_STM
+3_3V_SD --> 3_3V_STM
+5V --> VIN_RP
+GND_STM --> GND_RP
+CLK_STM1 --> CLK_RP
+DT_STM1 <-- DT_RP
+SW_STM1 <-- SW_RP
+VIN_MD <-- 12V_A
+GND_MD <-- GND_A
+SDA  <-->         SDA_1
+SCL "I2C" <-->    SCL_1
+Tx_1       <-->   Rx 
+Rx_1   "USART"    <-->   Tx 
+' STM32 --> MATLAB_SCRIPT
+' ' MATLAB_APP "zadana wartosc"--> MATLAB_SCRIPT
+' MATLAB_SCRIPT "syg sterujacy - predkosc" --> STM32
+' STM32 "Freq, VIN, GND" --> Motor_driver
+' Motor_driver --> Motor
+' Motor --> Enkoder
+' STM32 "USART" --> Terminal
+@enduml

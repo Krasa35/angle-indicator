@@ -11,6 +11,7 @@
 #include "main.h"
 #include "eth.h"
 #include "fatfs.h"
+#include "fatfs_sd.h"
 #include "i2c.h"
 #include "spi.h"
 #include "tim.h"

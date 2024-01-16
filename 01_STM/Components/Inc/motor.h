@@ -14,6 +14,7 @@
 #define MOTOR_SET_DECREASE(__HANDLE__)	MOTOR_Direction(__HANDLE__, GPIO_PIN_SET)
 
 #include "init.h"
+#include "miscellaneous.h"
 
 
 typedef struct {

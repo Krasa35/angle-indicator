@@ -36,6 +36,7 @@ HAL_StatusTypeDef MOTOR_Enable(_MOTOR_handle* motor, GPIO_PinState enable)
 		return HAL_ERROR;  // Invalid pointers, function failed
 	}
 	HAL_GPIO_WritePin(Enable_GPIO_Port, Enable_Pin, enable);
+	return HAL_OK;
 }
 HAL_StatusTypeDef MOTOR_FindFrequency(_MOTOR_handle* motor, float32_t diff){
 	float32_t dif = (diff > 1000) ? (diff = 1000):diff;

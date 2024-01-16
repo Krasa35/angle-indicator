@@ -22,6 +22,12 @@ _PID_handle pid_temp = {
 		.controller.Kd = 0.1f
 };
 
+FATFS fs;
+FIL fil;
+FRESULT fresult;
+char parametry[64];
+UINT bw;
+
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
@@ -113,6 +119,19 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 		{
 			pid_temp.setpoint = hpsr.set_angle;
 			(MOTOR_SET_ENABLE(&hmtr) != HAL_OK) ? (_Error_Handler(__FILE__, __LINE__)): 1 ;
+		}
+		if (hbfr.state == _REMOTE)
+		{
+			HAL_GPIO_TogglePin(LD1_GPIO_Port, LD1_Pin);
+			fresult = f_mount(&fs,"",0);
+			fresult = f_open(&fil, "parametry.txt", FA_OPEN_ALWAYS | FA_READ | FA_WRITE);
+			int parametry_len = sprintf (parametry,"kd=%f kd=%f kd=%f\n",hpid.controller.Kp,hpid.controller.Ki,hpid.controller.Kd);
+			fresult = f_lseek(&fil,f_size(&fil));
+			fresult = f_write(&fil,parametry,parametry_len,&bw);
+			f_close(&fil);
+			memset(&parametry,0,parametry_len);
+			fresult = f_mount(NULL,"",1);
+
 		}
 	}
 }

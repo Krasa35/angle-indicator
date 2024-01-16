@@ -40,20 +40,26 @@ Project orginally intended to be regulation system for inverted pendulum but aft
   - Variables moved to structures
   - Added better looking MENU in terminal
 
-- 2024-01-5 -- 0.0.5 
+- 2024-01-15 -- 0.0.5 
 
   - PID working on fixed gains
   - Motor structure created
   - Handling errors by HAL_OK
   - Button needs to be pressed to power on the motor
 
+- 2024-01-16 -- 0.0.6
+
+  - SD Card reader working -needs to be optified and used
+
 # TODO
 - [x] START/STOP functions for motor
 - [x] move variables to structures
 - [x] PID
+  - [ ] PID adjust, resolve issue with 360 -> 0 degrees
+- [x] SD CARD reader working
+  - [ ] SD CARD reader add functionality, write logs, etc.
 - [ ] Let user write in parameters of PID via UART
 - [ ] Desktop APP in MATLAB
-- [ ] SD CARD reader for logs
 - [ ] CRC sum
 - [ ] Ethernet communication
 - [ ] connect LCD
