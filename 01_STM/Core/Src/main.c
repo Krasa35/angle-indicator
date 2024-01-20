@@ -31,11 +31,8 @@
 /* USER CODE BEGIN Includes */
 #include <stdio.h>
 #include <string.h>
-//#include "interrupts.h"
-//#include "fatfs_sd.h"
-
-#include "lwip.h"
-#include "udp.h"
+#include "interrupts.h"
+#include "fatfs_sd.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -58,7 +55,7 @@
 /* USER CODE BEGIN PV */
 //float32_t set_angle;
 //float actual_angle;
-//extern _BUFFER_UARThandle hbfr;
+extern _BUFFER_UARThandle hbfr;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -69,28 +66,7 @@ void SystemClock_Config(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-#define MAX_SIZE 100
-  struct pbuf *p;
-  struct udp_pcb *pUDP_pcb;
-  char message[MAX_SIZE];
-  uint16_t count=0;
-  ip_addr_t dst_ip;
-void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
-{
-	if (GPIO_Pin == USER_Btn_Pin)
-	{
-		  MX_LWIP_Process();
-		  int length = snprintf(message,MAX_SIZE,"UDP message %d;", count);
-		  p = pbuf_alloc(PBUF_TRANSPORT, (uint16_t)length, PBUF_RAM);
-		  memcpy (p->payload,message,(size_t)length);
-		  IP4_ADDR(&dst_ip,192,168,113,4);
-		  uint16_t udp_dest_port = 25565;
-		  udp_sendto(pUDP_pcb, p, &dst_ip, udp_dest_port);
-		  pbuf_free(p);
-		  count++;
-		  HAL_GPIO_TogglePin(LD1_GPIO_Port, LD1_Pin);
-	}
-}
+
 /* USER CODE END 0 */
 
 /**
@@ -131,20 +107,29 @@ int main(void)
   MX_TIM3_Init();
   MX_LWIP_Init();
   /* USER CODE BEGIN 2 */
-//  HAL_TIM_Encoder_Start_IT(&htim1, TIM_CHANNEL_ALL);
-//  HAL_UART_Receive_IT(&huart3, (uint8_t *)&hbfr.rxBuffer[hbfr.rxIndex], 1);
-//  HAL_TIM_Base_Start_IT(&htim3);
-//  HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_1);
-//  HAL_GPIO_WritePin(Dir_GPIO_Port, Dir_Pin, GPIO_PIN_SET);
-//  HAL_GPIO_WritePin(Enable_GPIO_Port, Enable_Pin, GPIO_PIN_SET);
-  pUDP_pcb = udp_new();
-  udp_bind(pUDP_pcb, IP4_ADDR_ANY,1000);
+  HAL_TIM_Encoder_Start_IT(&htim1, TIM_CHANNEL_ALL);
+  HAL_UART_Receive_IT(&huart3, (uint8_t *)&hbfr.rxBuffer[hbfr.rxIndex], 1);
+  HAL_TIM_Base_Start_IT(&htim3);
+  HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_1);
+  HAL_GPIO_WritePin(Dir_GPIO_Port, Dir_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(Enable_GPIO_Port, Enable_Pin, GPIO_PIN_SET);
+  UDP_Init();
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+	  MX_LWIP_Process();
+      if (newDataAvailable)
+      {
+          // Process the received data
+          // For example, print it
+    	  UDP_SendMessage(rx_buffer);
+
+          // Reset the flag or variable
+          newDataAvailable = 0;
+      }
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

@@ -20,6 +20,7 @@
 #include "lcd.h"
 #include "AS5600.h"
 #include "pid.h"
+#include "eth_udp.h"
 
 #endif /* INC_INTERRUPTS_H_ */
 
