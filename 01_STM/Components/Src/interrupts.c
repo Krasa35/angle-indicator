@@ -119,6 +119,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 		{
 			pid_temp.setpoint = hpsr.set_angle;
 			(MOTOR_SET_ENABLE(&hmtr) != HAL_OK) ? (_Error_Handler(__FILE__, __LINE__)): 1 ;
+			UDP_SendMessage("MANUAL");
 		}
 		if (hbfr.state == _REMOTE)
 		{

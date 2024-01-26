@@ -9,7 +9,6 @@
 #define INC_INIT_H_
 #include <OLD_AS5600.h>
 #include "main.h"
-#include "eth.h"
 #include "fatfs.h"
 #include "fatfs_sd.h"
 #include "i2c.h"

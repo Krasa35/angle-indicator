@@ -18,8 +18,9 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include "eth.h"
+#include "fatfs.h"
 #include "i2c.h"
+#include "lwip.h"
 #include "spi.h"
 #include "tim.h"
 #include "usart.h"
@@ -29,6 +30,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include <stdio.h>
+#include <string.h>
 #include "interrupts.h"
 #include "fatfs_sd.h"
 /* USER CODE END Includes */
@@ -95,7 +97,6 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
-  MX_ETH_Init();
   MX_USART3_UART_Init();
   MX_USB_OTG_FS_PCD_Init();
   MX_I2C1_Init();
@@ -104,6 +105,7 @@ int main(void)
   MX_TIM4_Init();
   MX_TIM1_Init();
   MX_TIM3_Init();
+  MX_LWIP_Init();
   /* USER CODE BEGIN 2 */
   HAL_TIM_Encoder_Start_IT(&htim1, TIM_CHANNEL_ALL);
   HAL_UART_Receive_IT(&huart3, (uint8_t *)&hbfr.rxBuffer[hbfr.rxIndex], 1);
@@ -111,12 +113,23 @@ int main(void)
   HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_1);
   HAL_GPIO_WritePin(Dir_GPIO_Port, Dir_Pin, GPIO_PIN_SET);
   HAL_GPIO_WritePin(Enable_GPIO_Port, Enable_Pin, GPIO_PIN_SET);
+  UDP_Init();
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+	  MX_LWIP_Process();
+      if (newDataAvailable)
+      {
+          // Process the received data
+          // For example, print it
+    	  UDP_SendMessage(rx_buffer);
+
+          // Reset the flag or variable
+          newDataAvailable = 0;
+      }
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
