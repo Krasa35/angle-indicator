@@ -14,6 +14,7 @@
 #include "init.h"
 
 typedef struct {
+  int8_t active;
   char rxBuffer[MAX_BUFFER_SIZE];
   uint8_t rxIndex;
   Menu_States state;

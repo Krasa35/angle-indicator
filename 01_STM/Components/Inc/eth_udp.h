@@ -10,9 +10,17 @@
 
 #include "lwip.h"
 #include "udp.h"
+#include "init.h"
 
 extern volatile int newDataAvailable;  // Declare the flag as external
 extern char rx_buffer[];  // Declare the rx_buffer variable
+
+typedef struct{
+	  int8_t active;
+	  Menu_States state;
+	  MenuComs com;
+	  MenuStrings compStrings;
+} _BUFFER_ETHHandle;
 
 void UDP_Init(void);
 void UDP_SendMessage(const char *msg);

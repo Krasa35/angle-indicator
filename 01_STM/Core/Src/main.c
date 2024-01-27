@@ -33,6 +33,7 @@
 #include <string.h>
 #include "interrupts.h"
 #include "fatfs_sd.h"
+#include "miscellaneous.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -56,6 +57,7 @@
 //float32_t set_angle;
 //float actual_angle;
 extern _BUFFER_UARThandle hbfr;
+extern _PULSER_handle hpsr;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -107,13 +109,8 @@ int main(void)
   MX_TIM3_Init();
   MX_LWIP_Init();
   /* USER CODE BEGIN 2 */
-  HAL_TIM_Encoder_Start_IT(&htim1, TIM_CHANNEL_ALL);
-  HAL_UART_Receive_IT(&huart3, (uint8_t *)&hbfr.rxBuffer[hbfr.rxIndex], 1);
-  HAL_TIM_Base_Start_IT(&htim3);
-  HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_1);
-  HAL_GPIO_WritePin(Dir_GPIO_Port, Dir_Pin, GPIO_PIN_SET);
-  HAL_GPIO_WritePin(Enable_GPIO_Port, Enable_Pin, GPIO_PIN_SET);
   UDP_Init();
+  init_peripherals();
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -121,15 +118,6 @@ int main(void)
   while (1)
   {
 	  MX_LWIP_Process();
-      if (newDataAvailable)
-      {
-          // Process the received data
-          // For example, print it
-    	  UDP_SendMessage(rx_buffer);
-
-          // Reset the flag or variable
-          newDataAvailable = 0;
-      }
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

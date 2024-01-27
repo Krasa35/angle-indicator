@@ -15,6 +15,8 @@ extern _PULSER_handle hpsr;
 extern _MOTOR_handle hmtr;
 extern _BUFFER_UARThandle hbfr;
 extern _BUFFER_UARThandle hbfr2;
+extern _BUFFER_ETHHandle hudp;
+extern MenuHandle hmen;
 extern _PID_handle hpid;
 _PID_handle pid_temp = {
 		.controller.Kp = 1.7f,
@@ -29,18 +31,29 @@ char parametry[64];
 UINT bw;
 
 
+
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
 	if (htim->Instance == TIM3)
 	{
+		if (hbfr.active == 1)
+		{
+			hmen.state = hbfr.state;
+			hmen.com = hbfr.com;
+		}
+		else if (hudp.active == 1)
+		{
+			hmen.state = hudp.state;
+			hmen.com = hudp.com;
+		}
 	    (AS5600_Angle(&henc) != HAL_OK) ? (_Error_Handler(__FILE__, __LINE__)): 1 ;
 
-	    if (hbfr.state == _DEBUG)
+	    if (hmen.state == _DEBUG)
 	    {
 	    	snprintf(hbfr2.rxBuffer, sizeof(hbfr2.rxBuffer), "Current value read from encoder: %f \r\n", henc.angle);
 	    	send_uart(hbfr2.rxBuffer);
 	    }
-		if (hbfr.state == _DEBUG)
+		if (hmen.state == _DEBUG)
 		{
 			if ((hpsr.set_angle - 10) < henc.angle)
 			{
@@ -51,15 +64,31 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 				(MOTOR_SET_INCREASE(&hmtr) != HAL_OK) ? (_Error_Handler(__FILE__, __LINE__)): 1 ;
 			}
 		}
-		if (hbfr.state == _MANUAL)
+		if (hmen.state == _MANUAL)
 		{
 			pid_temp.current_angle = henc.angle;
 			(PID_update(&hpid, &pid_temp) != HAL_OK) ? (_Error_Handler(__FILE__, __LINE__)): 1 ;
 			PID_manualProcess(&hpid, &hmtr);
 			__HAL_TIM_SET_AUTORELOAD(&htim4,hmtr.frequency);
 		}
+		if (hmen.state == _REMOTE)
+		{
+			if (newDataAvailable && (rx_buffer[0] == 'd'))
+			{
+			    UDP_SendMessage(rx_buffer);
+			    float32_t angle_from_matlab = atof(rx_buffer);
+			    hpsr.set_angle = angle_from_matlab;
+			    // Reset the flag or variable
+			    newDataAvailable = 0;
+			}
+		}
 	}
 }
+
+//void HAL_ETH_RxCpltCallback(ETH_HandleTypeDef *heth)
+//{
+//
+//}
 
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
@@ -97,7 +126,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 
 //void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart){
 //	if (huart == &huart3){
-//		if (hbfr.state == _DEBUG)
+//		if (hmen.state == _DEBUG)
 //		{
 //			snprintf(hbfr2.rxBuffer, sizeof(hbfr2.rxBuffer), "Current value read from encoder: %f \r\n", henc.angle);
 //			send_uart(hbfr2.rxBuffer);
@@ -110,18 +139,25 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
 	if (GPIO_Pin == USER_Btn_Pin)
 	{
-		if (hbfr.state == _DEBUG)
+		if (hmen.state == _IDLE)
+		{
+			(hbfr.active == 1) ? (hbfr.active = 0):(hbfr.active = 1);
+			(hudp.active == 1) ? (hudp.active = 0):(hudp.active = 1);
+			(hudp.active + hbfr.active == 2) ? (hudp.active = 0):1;
+			(hudp.active + hbfr.active == 0) ? (hbfr.active = 1):1;
+		}
+		if (hmen.state == _DEBUG)
 		{
 			__HAL_TIM_SET_AUTORELOAD(&htim4,999);
 			(MOTOR_SET_ENABLE(&hmtr) != HAL_OK) ? (_Error_Handler(__FILE__, __LINE__)): 1 ;
 		}
-		if (hbfr.state == _MANUAL)
+		if (hmen.state == _MANUAL)
 		{
 			pid_temp.setpoint = hpsr.set_angle;
 			(MOTOR_SET_ENABLE(&hmtr) != HAL_OK) ? (_Error_Handler(__FILE__, __LINE__)): 1 ;
 			UDP_SendMessage("MANUAL");
 		}
-		if (hbfr.state == _REMOTE)
+		if (hmen.state == _REMOTE)
 		{
 			HAL_GPIO_TogglePin(LD1_GPIO_Port, LD1_Pin);
 			fresult = f_mount(&fs,"",0);

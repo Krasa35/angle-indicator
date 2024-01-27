@@ -48,6 +48,12 @@ typedef struct {
   const char *_IDLE;
 } MenuComs;
 
+typedef struct {
+	Menu_States state;
+	MenuStrings compStrings;
+	MenuComs	com;
+} MenuHandle;
+
 
 
 #endif /* INC_INIT_H_ */

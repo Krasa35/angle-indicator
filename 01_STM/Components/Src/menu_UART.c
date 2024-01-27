@@ -8,6 +8,7 @@
 #include "menu_UART.h"
 
 _BUFFER_UARThandle hbfr = {
+		.active = 0,
 		.state = 9,
 		.com = {
 				._DEBUG = ACTIVATED(DEBUG),
@@ -18,7 +19,8 @@ _BUFFER_UARThandle hbfr = {
 		.compStrings = {
 				  ._DEBUG = "DEBUG",
 				  ._REMOTE = "REMOTE",
-				  ._MANUAL = "MANUAL"
+				  ._MANUAL = "MANUAL",
+				  ._IDLE = "IDLE",
 				}
 };
 
