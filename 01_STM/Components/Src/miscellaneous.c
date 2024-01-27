@@ -10,7 +10,7 @@
 extern _BUFFER_UARThandle hbfr;
 extern _BUFFER_UARThandle hbfr2;
 extern MenuHandle hmen;
-_BUFFER_ETHHandle hudp;
+extern _BUFFER_ETHHandle hudp;
 extern _MOTOR_handle hmtr;
 
 
@@ -26,11 +26,12 @@ void init_peripherals()
 	  HAL_TIM_Encoder_Start_IT(&htim1, TIM_CHANNEL_ALL);
 	  HAL_UART_Receive_IT(&huart3, (uint8_t *)&hbfr.rxBuffer[hbfr.rxIndex], 1);
 	  HAL_TIM_Base_Start_IT(&htim3);
+	  HAL_TIM_Base_Start_IT(&htim5);
 	  HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_1);
 	  HAL_GPIO_WritePin(Dir_GPIO_Port, Dir_Pin, GPIO_PIN_SET);
 	  HAL_GPIO_WritePin(Enable_GPIO_Port, Enable_Pin, GPIO_PIN_SET);
 	  hudp.active = 0;
-	  hbfr.active = 0;
+	  hbfr.active = 1;
 	  hbfr2.active = 0;
 	  (MOTOR_SET_DISABLE(&hmtr) != HAL_OK) ? (_Error_Handler(__FILE__, __LINE__)): 1 ;
 }
