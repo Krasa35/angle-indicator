@@ -7,19 +7,22 @@
 
 #ifndef INC_ETH_UDP_H_
 #define INC_ETH_UDP_H_
+#define MAX_MSG_SIZE 	100
 
 #include "lwip.h"
 #include "udp.h"
 #include "init.h"
-
-extern volatile int newDataAvailable;  // Declare the flag as external
-extern char rx_buffer[];  // Declare the rx_buffer variable
 
 typedef struct{
 	  int8_t active;
 	  Menu_States state;
 	  MenuComs com;
 	  MenuStrings compStrings;
+	  char rx_buffer[MAX_MSG_SIZE];
+	  char tx_message[MAX_MSG_SIZE];
+	  ip_addr_t dst_ip;
+	  volatile int newDataAvailable;
+	  float32_t value;
 } _BUFFER_ETHHandle;
 
 void UDP_Init(void);

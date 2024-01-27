@@ -34,7 +34,7 @@ UINT bw;
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
-	if (htim->Instance == TIM3)
+	if (htim->Instance == TIM5)
 	{
 		if (hbfr.active == 1)
 		{
@@ -46,13 +46,11 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 			hmen.state = hudp.state;
 			hmen.com = hudp.com;
 		}
-	    (AS5600_Angle(&henc) != HAL_OK) ? (_Error_Handler(__FILE__, __LINE__)): 1 ;
-
-	    if (hmen.state == _DEBUG)
-	    {
-	    	snprintf(hbfr2.rxBuffer, sizeof(hbfr2.rxBuffer), "Current value read from encoder: %f \r\n", henc.angle);
-	    	send_uart(hbfr2.rxBuffer);
-	    }
+		if (hmen.state == _DEBUG)
+		{
+			snprintf(hbfr2.rxBuffer, sizeof(hbfr2.rxBuffer), "Current value read from encoder: %f \r\n", henc.angle);
+			send_uart(hbfr2.rxBuffer);
+		}
 		if (hmen.state == _DEBUG)
 		{
 			if ((hpsr.set_angle - 10) < henc.angle)
@@ -73,15 +71,24 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 		}
 		if (hmen.state == _REMOTE)
 		{
-			if (newDataAvailable && (rx_buffer[0] == 'd'))
+			if (hudp.newDataAvailable && sscanf(hudp.rx_buffer, "d%f", &hudp.value) == 1)
 			{
-			    UDP_SendMessage(rx_buffer);
-			    float32_t angle_from_matlab = atof(rx_buffer);
-			    hpsr.set_angle = angle_from_matlab;
-			    // Reset the flag or variable
-			    newDataAvailable = 0;
+				UDP_SendMessage(hudp.rx_buffer);
+				//float32_t angle_from_matlab = atof(hudp.value);
+				hpsr.set_angle = hudp.value;
+				// Reset the flag or variable
+				hudp.newDataAvailable = 0;
 			}
+			snprintf(hudp.rx_buffer, sizeof(hudp.rx_buffer), "%d,%d,%d",(uint8_t)henc.angle, (uint8_t)hpid.output, (uint8_t)hpid.lastError);
+			UDP_SendMessage(hudp.rx_buffer);
 		}
+	}
+	if (htim->Instance == TIM3)
+	{
+
+	    (AS5600_Angle(&henc) != HAL_OK) ? (_Error_Handler(__FILE__, __LINE__)): 1 ;
+
+
 	}
 }
 
