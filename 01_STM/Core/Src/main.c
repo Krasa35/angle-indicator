@@ -58,6 +58,9 @@
 //float actual_angle;
 extern _BUFFER_UARThandle hbfr;
 extern _PULSER_handle hpsr;
+extern MenuHandle hmen;
+extern _AS5600_handle henc;
+extern _PULSER_handle hpsr;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -109,6 +112,7 @@ int main(void)
   MX_TIM3_Init();
   MX_LWIP_Init();
   /* USER CODE BEGIN 2 */
+  LCD_Init(&hi2c1);
   UDP_Init();
   init_peripherals();
   /* USER CODE END 2 */
@@ -118,6 +122,7 @@ int main(void)
   while (1)
   {
 	  MX_LWIP_Process();
+	  LCD_Display(hpsr.set_angle,henc.angle,&hmen);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
