@@ -22,7 +22,6 @@ typedef struct{
 	  char tx_message[MAX_MSG_SIZE];
 	  ip_addr_t dst_ip;
 	  volatile int newDataAvailable;
-	  float32_t value;
 } _BUFFER_ETHHandle;
 
 void UDP_Init(void);

@@ -7,7 +7,7 @@ void LCD_Write_nibble(uint8_t nibble, uint8_t rs, I2C_HandleTypeDef *hi2c1) {
   data |= 1 << BL_BIT;//backlight_state << BL_BIT; // Include backlight state in data
   data |= 1 << EN_BIT;
   HAL_I2C_Master_Transmit(hi2c1, I2C_ADDR << 1, &data, 1, 100);
-  HAL_Delay(1);
+  //HAL_Delay(1);
   data &= ~(1 << EN_BIT);
   HAL_I2C_Master_Transmit(hi2c1, I2C_ADDR << 1, &data, 1, 100);
 }
@@ -18,7 +18,7 @@ void LCD_Send_cmd(uint8_t cmd, I2C_HandleTypeDef *hi2c1) {
   LCD_Write_nibble(upper_nibble, 0, hi2c1);
   LCD_Write_nibble(lower_nibble, 0, hi2c1);
   if (cmd == 0x01 || cmd == 0x02) {
-    HAL_Delay(2);
+    //HAL_Delay(2);
   }
 }
 

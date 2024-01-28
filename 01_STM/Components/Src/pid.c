@@ -14,6 +14,7 @@ _PID_handle hpid = {
 		.lastError = 0.0f,
 		.setpoint = NAN,
 		.output = 0.0f,
+		.at_dest = 0
 };
 
 HAL_StatusTypeDef PID_check(_PID_handle* pid)
@@ -44,16 +45,20 @@ HAL_StatusTypeDef PID_update(_PID_handle* pid, const _PID_handle* pid_new) {
 }
 
 HAL_StatusTypeDef PID_manualProcess(_PID_handle* pid, _MOTOR_handle* mtr){
-	float32_t error = pid->setpoint - pid->current_angle;
+	pid->error = pid->setpoint - pid->current_angle;
+	if (pid->error > 0) {(pid->error < 180) ? 1:(pid->error = pid->error - 360);}
+	if (pid->error < 0) {(pid->error < -180) ? (pid->error = pid->error + 360):1;}
 	arm_pid_init_f32(&pid->controller, 1);
-	pid->output = arm_pid_f32(&pid->controller, error);
-	float32_t diff = (pid->output - pid->lastOutput)/0.001;
+	pid->output = arm_pid_f32(&pid->controller, pid->error);
+//	float32_t diff = (pid->output - pid->lastOutput)/0.001;
 	GPIO_PinState dir = (pid->output < 0) ? (GPIO_PIN_SET):(GPIO_PIN_RESET);
 	(MOTOR_Direction(mtr, dir) != HAL_OK) ? (_Error_Handler(__FILE__, __LINE__)): 1 ;
-	(MOTOR_FindFrequency(mtr, diff) != HAL_OK) ? (_Error_Handler(__FILE__, __LINE__)): 1 ;
-	pid->lastOutput= pid->output;
-	if (abs(error) < 5.0f){
+	(MOTOR_FindFrequency(mtr, pid->output) != HAL_OK) ? (_Error_Handler(__FILE__, __LINE__)): 1 ;
+//	pid->lastOutput= pid->output;
+	if (pid->at_dest) {(MOTOR_SET_ENABLE(mtr) != HAL_OK) ? (_Error_Handler(__FILE__, __LINE__)): 1 ;}
+	if (abs(pid->error) < 1.0f){
 		(MOTOR_SET_DISABLE(mtr) != HAL_OK) ? (_Error_Handler(__FILE__, __LINE__)): 1 ;
+		pid->at_dest = 1;
 	}
 	return HAL_OK;
 }

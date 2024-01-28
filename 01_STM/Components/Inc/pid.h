@@ -17,11 +17,13 @@
 
 typedef struct {
     arm_pid_instance_f32 controller;
-    float setpoint;
+    float32_t setpoint;
+    float error;
     float lastError;
     float lastOutput;
     float output;
     float current_angle;
+    uint8_t at_dest;
 } _PID_handle;
 
 HAL_StatusTypeDef PID_check(_PID_handle* pid);

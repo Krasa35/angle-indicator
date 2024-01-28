@@ -22,7 +22,7 @@ typedef struct {
 	GPIO_PinState 	dir_state;
 //	GPIO_PinState button = GPIO_PIN_RESET;
 	float32_t error;
-	float32_t frequency;
+	float32_t freq_div;
 } _MOTOR_handle;
 
 HAL_StatusTypeDef MOTOR_Direction(_MOTOR_handle* motor, GPIO_PinState enable);

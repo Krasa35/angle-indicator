@@ -12,7 +12,7 @@ _MOTOR_handle hmtr = {
 		.dir_state = GPIO_PIN_RESET,
 //		.button = GPIO_PIN_RESET
 		.error = 0.0f,
-		.frequency = 0.0f,
+		.freq_div = 0.0f,
 };
 
 
@@ -39,8 +39,8 @@ HAL_StatusTypeDef MOTOR_Enable(_MOTOR_handle* motor, GPIO_PinState enable)
 	return HAL_OK;
 }
 HAL_StatusTypeDef MOTOR_FindFrequency(_MOTOR_handle* motor, float32_t diff){
-	float32_t dif = (diff > 1000) ? (diff = 1000):diff;
-	dif = (diff < -1000) ? (diff = -1000):diff;
-	motor->frequency = floor((1000 - (dif/5))*999/1000);
+	float32_t dif;
+	dif = (diff > 320) ? 320 : ((diff < -320) ? -320 : diff);
+	motor->freq_div = floor(810 - abs(dif)*2.5);
 	return HAL_OK;
 }
