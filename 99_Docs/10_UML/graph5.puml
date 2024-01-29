@@ -1,77 +1,137 @@
 @startuml
 ' This plugin integrates all type diagram snippets. They are splitted into 9 sections:
-component [Encoder\n\nOUT:\nangle:\tuint16_t\nIN:\nCommand:\tuint8_t]{
-    portin SDA_1
-    portin SCL_1
+component "Encoder" as Encoder{ 
+    '"Encoder\n\nOUT:\nangle:\tuint16_t\nIN:\nCommand:\tuint8_t"
+    portin "SDA" as SDA_1
+    portin "SCL" as SCL_1
+    portin "5V" as 5V_1
+    portin "GND" as GND_1
 } 
 
-component STM32{
-    portout SDA
-    portout SCL
-    portout CLK_STM1
-    portout DT_STM1
-    portout SW_STM1
-    portout 5V
-    portout GND_STM
-    portin 3_3V_STM
+component "STM32" as STM32{
+    portin "3,3 V" as 3_3V_STM
+    portin "CLK" as CLK_STM
+    portin "CW" as CW_STM
+    portin "EN" as EN_STM
+    portin "CLK" as CLK_SPI_STM
+    portin "MISO" as MISO_STM
+    portin "MOSI" as MOSI_STM
+    portin "ETHERNET" as ETH_STM
     portin Rx
     portin Tx
-    portin CLK_STM
-    portin CW_STM
-    portin EN_STM
-    portin CLK_SPI_STM
-    portin MISO_STM
-    portin MOSI_STM
+
+    component USART3{
+        portin PD8
+        portin PD9
+    }
+    component "TIM1 \n Base Freq: 100Hz" as TIM1 {
+        portout PE9
+        portout PE11
+    }
+    component SPI1{
+        portin PA5
+        portin PA6
+        portin PB5
+    }
+    portin "GND" as GND_STM2
+    portout SDA
+    portout SCL
+    component I2C1{
+        portout PB8
+        portout PB9
+    }
+    component "TIM4 \n Base Freq: 100Hz" as TIM4 {
+        portin PD12
+    }
+    portout "CLK" as CLK_STM1
+    portout "DT" as DT_STM1
+    portout "SW" as SW_STM1
+    portout 5V
+    portout "GND" as GND_STM
+    CLK_STM -- PD12
+    CW_STM -- PD13
+    EN_STM -- PD11
+    PB9 -- SDA
+    PB8 -- SCL
+    MISO_STM -- PA6
+    MOSI_STM -- PB5
+    CLK_SPI_STM -- PA5
+    PE9 -- CLK_STM1
+    PE11 -- DT_STM1
+    Tx -- PD8
+    Rx -- PD9
+    
+
 }
 
-component [PC\n\nIN:\nangle\tfloat]{
-    portout Rx_1
-    portout Tx_1
+component "PC" as PC{
+    ' portout "Rx" as Rx_1
+    ' portout "Tx" as Tx_1
+    component USB{
+        component Terminal
+        component USART {
+            portout "Rx" as Rx_1
+            portout "Tx" as Tx_1
+            }
+        }
+    component ETHERNET{
+        component MATLAB_APP
+        component UDP {
+            portout "ETHERNET" as ETHERNET_PC
+        }
+    }
 }
 
-component [Motor\n\nIN:\n]{
-    portout Ap_M
-    portout Am_M
-    portout Bp_M
-    portout Bm_M
+component "Motor" as Motor{
+    portout "A+" as Ap_M
+    portout "A-" as Am_M
+    portout "B+" as Bp_M
+    portout "B-" as Bm_M
 }
 
-component [Motor\tdriver\n\nIN:\n]{
-    portin Ap_MD
-    portin Am_MD
-    portin Bp_MD
-    portin Bm_MD
-    portout CLK_MD
-    portout CW_MD
-    portout EN_MD
-    portout VIN_MD
-    portout GND_MD
+component "Motor driver" as MD{
+    portin "A+" as Ap_MD
+    portin "A-" as Am_MD
+    portin "B+" as Bp_MD
+    portin "B-" as Bm_MD
+    portout "CLK" as CLK_MD
+    portout "CW" as CW_MD
+    portout "EN" as EN_MD
+    portout "VIN" as VIN_MD
+    portout "GND" as GND_MD
 }
 
-component [Rotary\tPulser\n\n\tIN:\n]{
-    portin CLK_RP
-    portin DT_RP
-    portin SW_RP
-    portin VIN_RP
-    portin GND_RP
+component "Rotary Pulser" as Pulser{
+    portin "VIN" as VIN_RP
+    portin "GND" as GND_RP
+    portin "CLK" as CLK_RP
+    portin "DT" as DT_RP
+    portin "SW" as SW_RP
 }
 
-component [ACDC\tAdapter\n]{
-    portin 12V_A
-    portin GND_A
+component "AC/DC Adapter\n" as ACDC{
+    portin "12V" as 12V_A
+    portin "GND" as GND_A
 }
 
 
-component [SD\tCARD\tReader]{
-    portout 5V_SD
-    portout GND_SD
-    portout 3_3V_SD
-    portout MOSI_SD
-    portout CS_SD
-    portout CLK_SD
-    portout MISO_SD
-    portout GND2_SD
+component "SD CARD Reader" as SD_READER{
+    ' portout "5V" as 5V_SD
+    portout "GND" as GND_SD
+    portout "3,3 V" as 3_3V_SD
+    portout "CS" as CS_SD
+    portout "MOSI" as MOSI_SD
+    portout "CLK" as CLK_SD
+    portout "MISO" as MISO_SD
+    ' portout "GND" as GND2_SD
 }
+
+component "LCD Display" as LCD{
+    portin "SDA" as SDA_LCD
+    portin "SCL" as SCL_LCD
+    portin "5V" as 5V_LCD
+    portin "GND" as GND_LCD
+} 
 
 ' component Motor_driver{
 '     Enable: 1
@@ -100,28 +160,47 @@ Ap_M --> Ap_MD
 Am_M --> Am_MD
 Bp_M --> Bp_MD
 Bm_M --> Bm_MD
-CLK_MD --> CLK_STM
-CW_MD --> CW_STM
-EN_MD --> EN_STM
-5V_SD --> 5V
-GND_SD --> GND_STM
-MISO_SD --> MISO_STM
-MOSI_SD --> MOSI_STM
-CLK_SD --> CLK_SPI_STM
-CS_SD --> GND_STM
-GND2_SD --> GND_STM
-3_3V_SD --> 3_3V_STM
-5V --> VIN_RP
-GND_STM --> GND_RP
-CLK_STM1 --> CLK_RP
-DT_STM1 <-- DT_RP
-SW_STM1 <-- SW_RP
-VIN_MD <-- 12V_A
-GND_MD <-- GND_A
-SDA  <-->         SDA_1
-SCL "I2C" <-->    SCL_1
-Tx_1       <-->   Rx 
-Rx_1   "USART"    <-->   Tx 
+
+CLK_MD ---> CLK_STM
+CW_MD ---> CW_STM
+EN_MD ---> EN_STM
+
+' 5V_SD ---> 5V
+MISO_SD <--- MISO_STM
+MOSI_SD ---> MOSI_STM
+CLK_SD <--- CLK_SPI_STM
+' GND2_SD ---> GND_STM2
+CS_SD <--- GND_STM2
+GND_SD ---> GND_STM2
+3_3V_SD <--- 3_3V_STM
+
+
+
+Tx_1     <--->   Rx 
+Rx_1  <--->   Tx 
+Terminal <--> USART
+MATLAB_APP <--> UDP
+ETHERNET_PC "\n\nUDP" <--> ETH_STM
+
+
+5V ---> VIN_RP
+GND_STM ---> GND_RP
+CLK_STM1 ---> CLK_RP
+DT_STM1 <--- DT_RP
+SW_STM1 <--- SW_RP
+VIN_MD <--- 12V_A
+GND_MD <--- GND_A
+SDA  <---> SDA_1
+SCL <---> SCL_1
+SDA  <---> SDA_LCD
+SCL <---> SCL_LCD
+5V ---> 5V_LCD
+GND_STM ---> GND_LCD
+5V ---> 5V_1
+GND_STM ---> GND_1
+
+
+
 ' STM32 --> MATLAB_SCRIPT
 ' ' MATLAB_APP "zadana wartosc"--> MATLAB_SCRIPT
 ' MATLAB_SCRIPT "syg sterujacy - predkosc" --> STM32

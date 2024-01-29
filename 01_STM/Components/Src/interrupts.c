@@ -61,6 +61,18 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
             snprintf(hbfr2.rxBuffer, sizeof(hbfr2.rxBuffer), "Current value read from encoder: %f; \r\n", henc.angle);
             send_uart(hbfr2.rxBuffer);
         }
+		if (hmen.state == _DEBUG)
+		{
+			if (((hpsr.set_angle > henc.angle) && (hpsr.set_angle -  henc.angle < 180))||
+					((hpsr.set_angle < henc.angle) && (henc.angle - hpsr.set_angle > 180)))
+			{
+				(MOTOR_SET_INCREASE(&hmtr) != HAL_OK) ? (_Error_Handler(__FILE__, __LINE__)): 1 ;
+			}
+			else
+			{
+				(MOTOR_SET_DECREASE(&hmtr) != HAL_OK) ? (_Error_Handler(__FILE__, __LINE__)): 1 ;
+			}
+		}
         else if (hmen.state == _MANUAL)
         {
             // Handle MANUAL state
@@ -69,7 +81,10 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
             (PID_update(&hpid, &pid_temp) != HAL_OK) ? (_Error_Handler(__FILE__, __LINE__)) : 1;
             PID_manualProcess(&hpid, &hmtr);
             __HAL_TIM_SET_AUTORELOAD(&htim4, hmtr.freq_div);
-            __HAL_TIM_SET_PRESCALER(&htim4, 7199);
+            if (__HAL_TIM_GET_AUTORELOAD(&htim4) < __HAL_TIM_GET_COUNTER(&htim4))
+            {
+                __HAL_TIM_SET_COUNTER(&htim4, 0);
+            }
         }
         else if (hmen.state == _REMOTE)
         {
