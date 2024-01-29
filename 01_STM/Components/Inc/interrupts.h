@@ -1,10 +1,10 @@
 /**
  ******************************************************************************
- * @file		: interrupts.h
- * @author  	: KKI		kacper.krasin35@gmail.com
- * @version 	: 0.0.1
- * @date    	: Jan 12, 2024
- * @brief   	: Brief of source file
+ * @file      : interrupts.h
+ * @author    : KKI    kacper.krasin35@gmail.com
+ * @version   : 0.0.1
+ * @date      : Jan 12, 2024
+ * @brief     : Header file for interrupt handling
  *
  ******************************************************************************
  **/
@@ -27,7 +27,7 @@
 //*****************************Brief Template*********************************//
 // Name Of Function
 /**
- * @brief 			@brief function
- * @param[in] 	  	name of @param 1		: Description
- * @retval 			name of @retval 		: Description
+ * @brief          Brief description of the function.
+ * @param[in]      Parameter1: Description of parameter 1.
+ * @retval         Return value: Description of the return value.
  */

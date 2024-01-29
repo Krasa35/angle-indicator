@@ -2,18 +2,20 @@
  * AS5600.h
  *
  *  Created on: Jan 14, 2024
- *      Author: kacpe
+ *      Author: Kurus
  */
 
 #ifndef INC_AS5600_H_
 #define INC_AS5600_H_
 
+// Include necessary libraries and header files
 #include "stdint.h"
 #include "i2c.h"
 
-#define _AS5600_ADDRESS 0x36 //adres urzadzenia
+// Define AS5600 device address
+#define _AS5600_ADDRESS 0x36
 
-//adresy rejestrow
+// Define addresses of AS5600 registers
 #define _ZMCO 0x00
 #define _ZPOS 0x01
 #define _MPOS 0x03
@@ -24,9 +26,12 @@
 #define _STATUS 0x0B
 #define _AGC 0x1A
 #define _MAGNITUDE 0x01B
+
+// Define maximum delay for AS5600 operations
 #define AS5600_MAX_DELAY 200
 
-typedef struct{
+// Structure for AS5600 handle
+typedef struct {
     uint8_t    ADDRESS;
     uint8_t    ZMCO;
     uint8_t    ZPOS1;
@@ -46,9 +51,10 @@ typedef struct{
     uint8_t    MAGNITUDE1;
     uint8_t    MAGNITUDE2;
     uint8_t    magnes_distance;
-    float 	   angle;
+    float      angle;
 } _AS5600_handle;
 
+// Function prototypes
 HAL_StatusTypeDef AS5600_Angle(_AS5600_handle* encoder);
 HAL_StatusTypeDef AS5600_Magnes_Distance(_AS5600_handle* encoder);
 

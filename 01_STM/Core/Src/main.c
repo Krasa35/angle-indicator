@@ -55,12 +55,6 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-//float32_t set_angle;
-//float actual_angle;
-extern _BUFFER_UARThandle hbfr;
-extern _PULSER_handle hpsr;
-extern MenuHandle hmen;
-extern _AS5600_handle henc;
 extern _PULSER_handle hpsr;
 /* USER CODE END PV */
 

@@ -7,12 +7,16 @@
 
 #ifndef INC_ETH_UDP_H_
 #define INC_ETH_UDP_H_
+
+// Define maximum message size
 #define MAX_MSG_SIZE 	100
 
+// Include necessary libraries and header files
 #include "lwip.h"
 #include "udp.h"
 #include "init.h"
 
+// Structure for Ethernet buffer handle
 typedef struct{
 	  int8_t active;
 	  Menu_States state;
