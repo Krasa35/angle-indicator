@@ -6,7 +6,13 @@ Project of regulation system for angle indicator based on STM32. Software is dev
 
 Project orginally intended to be regulation system for inverted pendulum but after considerations and thoughts it was decided to create angle indicator object, so name was kept because of first willingnesses.
 
-# Changelog
+##  Documentation
+Full [documentation](Sprawozdanie.pdf) in Polish language is provided because of requirements of the classes.
+In the future README may be updated in english or report for classes translated.
+
+Project done on Embedded System classes on Poznan University Of Technology.
+
+<!---# Changelog
 
 - 2024-01-07 -- 0.0.0 *3e155d3288b4f657afef73313a0b35f8e921f397*
   - Startup of git repo and files for first report - intended project inside **99_Docs**
@@ -49,17 +55,17 @@ Project orginally intended to be regulation system for inverted pendulum but aft
 
 - 2024-01-16 -- 0.0.6
 
-  - SD Card reader working -needs to be optified and used
+  - SD Card reader working -needs to be optified and used-->
 
 # TODO
 - [x] START/STOP functions for motor
 - [x] move variables to structures
 - [x] PID
-  - [ ] PID adjust, resolve issue with 360 -> 0 degrees
+  - [x] PID adjust, resolve issue with 360 -> 0 degrees
 - [x] SD CARD reader working
-  - [ ] SD CARD reader add functionality, write logs, etc.
-- [ ] Let user write in parameters of PID via UART
-- [ ] Desktop APP in MATLAB
-- [ ] CRC sum
-- [ ] Ethernet communication
-- [ ] connect LCD
+  - [x] SD CARD reader add functionality, write logs, etc.
+- [ ] ~~Let user write in parameters of PID via UART~~
+- [x] Desktop APP in MATLAB
+- [ ] ~~CRC sum~~
+- [x] Ethernet communication
+- [x] connect LCD
